@@ -2616,6 +2616,7 @@
 import React, { useState, useMemo, useContext, createContext, useEffect, useRef, useCallback } from "react";
 import storeData from "./Data.json";
 import { api, getToken, setToken, clearToken } from "./lib/api";
+import { routeFor, parseRoute, useSEO, SITE_URL, SITE_NAME } from "./lib/seo";
 
 /* =========================================================
    DESIGN TOKENS — Bazaro Fashion V2 inspired
@@ -2767,7 +2768,9 @@ const AppContext = createContext(null);
 const useApp = () => useContext(AppContext);
 
 function AppProvider({ children }) {
-  const [page, setPage] = useState({ name:"home" });
+  const [page, setPage] = useState(() =>
+    typeof window !== "undefined" ? parseRoute(window.location.pathname, window.location.search) : { name:"home" }
+  );
   const [cart, setCart] = useState([]);
   const [user, setUser] = useState(null);
   const [authLoading, setAuthLoading] = useState(true);
@@ -2785,9 +2788,25 @@ function AppProvider({ children }) {
   };
 
   const navigate = (name, params={}) => {
-    setPage({ name, ...params });
+    const next = { name, ...params };
+    setPage(next);
+    const path = routeFor(next);
+    if (path !== window.location.pathname + window.location.search) {
+      window.history.pushState(next, "", path);
+    }
     window.scrollTo?.({ top:0, behavior:"smooth" });
   };
+
+  // Keeps the app in sync with the browser's own back/forward buttons —
+  // without this, "navigate" pushes URLs but Back would just leave the site.
+  useEffect(() => {
+    const onPopState = () => {
+      setPage(parseRoute(window.location.pathname, window.location.search));
+      window.scrollTo?.({ top:0, behavior:"smooth" });
+    };
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
 
   const addToCart = (product, size, color, qty=1) => {
     setCart(prev => {
@@ -5546,6 +5565,152 @@ function FaqPage() {
   );
 }
 
+/* =========================================================  SEO  =========================================================
+   Keeps <title>, meta description, canonical/OG/Twitter tags, and JSON-LD
+   structured data lined up with whichever page is currently showing. Search
+   result pages that map to real target keywords (sherwani / new / sale) are
+   indexable landing pages; free-text search and account/cart/checkout are
+   marked noindex since they're thin or duplicate content. */
+const absUrl = (src) => {
+  if (!src) return null;
+  if (src.startsWith("http")) return src;
+  return `${SITE_URL}${src.replace(/^\.?\/?/, "/")}`;
+};
+
+function PageSEO() {
+  const { page } = useApp();
+  const path = routeFor(page);
+
+  let title = `${SITE_NAME} — Kids' Kurta, Sherwani & Ethnic Wear in Pakistan`;
+  let description = "Shop premium kids' kurtas, sherwanis, and ethnic wear for boys and girls at MD Fashion. Free shipping over Rs. 2,000, Cash on Delivery across Pakistan.";
+  let image = absUrl("/logo.png");
+  let noindex = false;
+  let jsonLd = null;
+
+  const orgSchema = {
+    "@type": "ClothingStore",
+    name: SITE_NAME,
+    url: SITE_URL,
+    logo: absUrl("/logo.png"),
+    image: absUrl("/logo.png"),
+    description: "Kids' kurta, sherwani, and ethnic wear store shipping across Pakistan.",
+    address: { "@type": "PostalAddress", streetAddress: "Tariq Road, Kurta Galli", addressCountry: "PK" },
+  };
+
+  const breadcrumb = (items) => ({
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((it, i) => ({
+      "@type": "ListItem", position: i + 1, name: it.name,
+      item: it.path ? `${SITE_URL}${it.path}` : undefined,
+    })),
+  });
+
+  switch (page.name) {
+    case "home": {
+      // Organization/ClothingStore JSON-LD already ships statically in
+      // index.html (so non-JS crawlers see it too) — no need to duplicate it here.
+      break;
+    }
+    case "category": {
+      const cat = CATEGORIES.find(c => c.id === page.id);
+      const label = cat?.label || "Kids' Kurta";
+      title = `${label} — Buy Online | ${SITE_NAME}`;
+      description = `Shop the ${label} collection at MD Fashion — embroidered, sequin and cotton kurtas for boys and girls, sizes 16–36. Free shipping over Rs. 2,000, Cash on Delivery.`;
+      const items = PRODUCTS.filter(p => p.category === page.id).slice(0, 24);
+      jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "CollectionPage",
+            name: title,
+            url: `${SITE_URL}${path}`,
+            mainEntity: {
+              "@type": "ItemList",
+              itemListElement: items.map((p, i) => ({
+                "@type": "ListItem", position: i + 1, name: p.name,
+                url: `${SITE_URL}${routeFor({ name:"product", id:p.id })}`,
+              })),
+            },
+          },
+          breadcrumb([{ name:"Home", path:"/" }, { name:label }]),
+        ],
+      };
+      break;
+    }
+    case "search": {
+      const q = (page.query || "").toLowerCase();
+      const known = { sherwani:"Kids' Sherwani", new:"New Arrivals", sale:"Sale" };
+      const label = known[q] || (page.query ? `Search: "${page.query}"` : "Search");
+      title = `${label} — ${SITE_NAME}`;
+      description =
+        q === "sherwani" ? "Shop kids' sherwani for weddings and Eid at MD Fashion — ceremonial ethnic wear for boys, sizes 16–36. Free shipping over Rs. 2,000."
+        : q === "new" ? "New kids' kurta and sherwani arrivals at MD Fashion — fresh embroidered and printed designs added every week."
+        : q === "sale" ? "Kids' kurta and sherwani sale at MD Fashion — save on ethnic wear for boys and girls, Cash on Delivery available."
+        : `Search results for "${page.query || ""}" at MD Fashion.`;
+      noindex = !known[q];
+      if (known[q]) jsonLd = { "@context": "https://schema.org", ...orgSchema, "@type":"CollectionPage", name:title, url:`${SITE_URL}${path}` };
+      break;
+    }
+    case "product": {
+      const product = PRODUCTS.find(p => p.id === page.id);
+      if (product) {
+        title = `${product.name} — Kids' Kurta | ${SITE_NAME}`;
+        description = (product.description || `Buy ${product.name} online at MD Fashion.`).slice(0, 155);
+        image = absUrl(product.images?.[0]) || image;
+        const categoryLabel = CATEGORIES.find(c => c.id === product.category)?.label;
+        jsonLd = {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Product",
+              name: product.name,
+              image: (product.images || []).map(absUrl),
+              description: product.description,
+              sku: product.id,
+              brand: { "@type": "Brand", name: SITE_NAME },
+              offers: {
+                "@type": "Offer",
+                url: `${SITE_URL}${path}`,
+                priceCurrency: "PKR",
+                price: getMinSizePrice(product),
+                availability: "https://schema.org/InStock",
+              },
+              ...(product.rating ? { aggregateRating: { "@type":"AggregateRating", ratingValue: product.rating, reviewCount: product.reviews || 1 } } : {}),
+            },
+            breadcrumb([{ name:"Home", path:"/" }, { name:categoryLabel, path: routeFor({name:"category",id:product.category}) }, { name: product.name }]),
+          ],
+        };
+      }
+      break;
+    }
+    case "about":
+      title = `About Us — ${SITE_NAME}`;
+      description = "MD Fashion is a Pakistan-based kids' ethnic wear store — kurtas and sherwanis crafted for everyday wear and special occasions.";
+      break;
+    case "faq":
+      title = `FAQs — Shipping, Returns & Sizing | ${SITE_NAME}`;
+      description = "Answers to common questions about MD Fashion orders, shipping, returns, and sizing for kids' kurtas and sherwanis.";
+      break;
+    case "cart":
+      title = `Shopping Cart | ${SITE_NAME}`;
+      noindex = true;
+      break;
+    case "checkout":
+      title = `Checkout | ${SITE_NAME}`;
+      noindex = true;
+      break;
+    case "account":
+      title = `My Account | ${SITE_NAME}`;
+      noindex = true;
+      break;
+    default:
+      break;
+  }
+
+  useSEO({ title, description, path, image, noindex, jsonLd });
+  return null;
+}
+
 /* =========================================================  ROUTER  ========================================================= */
 function PageRouter() {
   const { page } = useApp();
@@ -5567,6 +5732,7 @@ export default function App() {
   return (
     <AppProvider>
       <GlobalStyles />
+      <PageSEO />
       <div style={{minHeight:"100vh",display:"flex",flexDirection:"column",fontFamily:"'Inter',sans-serif",background:"#FBF9F4",color:"#1D1C18"}}>
         <Header />
         <main style={{flex:1}}>

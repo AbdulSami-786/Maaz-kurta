@@ -623,7 +623,7 @@
     },
     {
       "id": "kk-017",
-      "name": "Navy Striped Leaf Print Kurta",
+      "name": "BLACK Striped Leaf Print Kurta",
       "category": "kids",
       "price": 2500,
       "salePrice": null,
@@ -634,7 +634,7 @@
         "Navy"
       ],
       "colorImages": {
-        "Navy": [
+        "BLACK": [
           "./product/pro16-1.jpeg",
           "./product/pro16-2.jpeg"
         ]
@@ -666,7 +666,7 @@
         "36": 3500
       },
       "fabric": "Cotton",
-      "description": "A navy kurta printed with a fine striped leaf motif and dotted booti detailing in a warm gold tone. The Mandarin collar and fabric-covered buttons keep it traditional, while the breathable cotton makes it comfortable for everyday and festive wear alike.",
+      "description": "A black kurta printed with a fine striped leaf motif and dotted booti detailing in a warm gold tone. The Mandarin collar and fabric-covered buttons keep it traditional, while the breathable cotton makes it comfortable for everyday and festive wear alike.",
       "care": "Gentle hand wash or machine wash on delicate cycle. Wash with similar colors and use a mild detergent only. Do not bleach. Iron on low heat and hang to dry in shade.",
       "images": [
         "./product/pro16-1.jpeg",
