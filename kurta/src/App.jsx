@@ -3066,20 +3066,20 @@ function ProductCard({ product }) {
       </div>
 
       {/* Info below card */}
-      <div style={{padding:"12px 0 0"}}>
+      <div style={{padding:"12px 0 0",minWidth:0}}>
         {product.colors.length > 1 && (
-          <div style={{display:"flex",gap:6,marginBottom:8}}>
+          <div style={{display:"flex",flexWrap:"wrap",gap:6,marginBottom:8}}>
             {product.colors.map(c => (
-              <button key={c} title={c} onClick={()=>setActiveColor(c)} style={{width:14,height:14,borderRadius:"50%",border:activeColor===c?"2px solid #111":"1px solid #D9D2C2",background:COLOR_SWATCHES[c]||"#ccc",cursor:"pointer",transition:"all 0.2s"}} />
+              <button key={c} title={c} onClick={()=>setActiveColor(c)} style={{width:14,height:14,borderRadius:"50%",border:activeColor===c?"2px solid #111":"1px solid #D9D2C2",background:COLOR_SWATCHES[c]||"#ccc",cursor:"pointer",transition:"all 0.2s",flexShrink:0}} />
             ))}
           </div>
         )}
         <button onClick={()=>navigate("product",{id:product.id})} style={{background:"none",border:"none",cursor:"pointer",textAlign:"left",width:"100%"}}>
           <p style={{fontSize:13,fontWeight:500,color:"#111",marginBottom:4,lineHeight:1.4}} className="line-clamp-1">{product.name}</p>
         </button>
-        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:8}}>
-          <span style={{fontSize:"14px",fontWeight:600,color:"#111"}}>From {formatPKR(minPrice)}</span>
-          <Stars rating={product.rating} />
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:6}}>
+          <span style={{fontSize:"13px",fontWeight:600,color:"#111",minWidth:0,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>From {formatPKR(minPrice)}</span>
+          <span style={{flexShrink:0}}><Stars rating={product.rating} /></span>
         </div>
       </div>
     </div>
@@ -3133,10 +3133,10 @@ function Header() {
     <>
       <AnnouncementBar />
       <header style={{position:"sticky",top:0,zIndex:50,background:"rgba(251,249,244,0.96)",backdropFilter:"blur(8px)",borderBottom:"1px solid #E7E0D2"}}>
-        <div style={{maxWidth:1320,margin:"0 auto",padding:"0 24px",display:"flex",alignItems:"center",justifyContent:"space-between",height:70,gap:24}}>
+        <div className="header-inner" style={{maxWidth:1320,margin:"0 auto",padding:"0 24px",display:"flex",alignItems:"center",justifyContent:"space-between",height:70,gap:24}}>
           {/* Logo */}
           <button onClick={()=>navigate("home")} style={{background:"none",border:"none",cursor:"pointer",display:"flex",alignItems:"center",flexShrink:0}}>
-            <img src="/logo.png" alt="MD Fashion" onError={onImgError} style={{height:60,width:60,objectFit:"contain",flexShrink:0}} />
+            <img className="header-logo-img" src="/logo.png" alt="MD Fashion" onError={onImgError} style={{height:60,width:60,objectFit:"contain",flexShrink:0}} />
           </button>
 
           {/* Desktop Nav */}
@@ -3147,9 +3147,9 @@ function Header() {
           </nav>
 
           {/* Actions */}
-          <div style={{display:"flex",alignItems:"center",gap:16,flexShrink:0}}>
+          <div className="header-actions" style={{display:"flex",alignItems:"center",gap:16,flexShrink:0}}>
             <button onClick={()=>setSearchOpen(o=>!o)} style={{background:"none",border:"none",cursor:"pointer",color:"#1D1C18",display:"flex",alignItems:"center"}}><LineIcon name="search" size={19} /></button>
-            <button onClick={()=>navigate("account")} style={{background:"none",border:"none",cursor:"pointer",fontSize:11,letterSpacing:"0.14em",textTransform:"uppercase",color:"#1D1C18",fontWeight:500,display:"flex",alignItems:"center"}}>
+            <button onClick={()=>navigate("account")} className="header-account-btn" style={{background:"none",border:"none",cursor:"pointer",fontSize:11,letterSpacing:"0.14em",textTransform:"uppercase",color:"#1D1C18",fontWeight:500,display:"flex",alignItems:"center",whiteSpace:"nowrap"}}>
               {user ? user.name.split(" ")[0] : "Account"}
             </button>
             <button onClick={()=>navigate("account",{tab:"wishlist"})} style={{background:"none",border:"none",cursor:"pointer",color:"#1D1C18",position:"relative",display:"flex",alignItems:"center"}}>
@@ -3188,7 +3188,18 @@ function Header() {
         )}
       </header>
 
-      <style>{`@media(max-width:768px){.mobile-menu-btn{display:flex!important} .desktop-nav{display:none!important}}`}</style>
+      <style>{`
+        @media(max-width:768px){.mobile-menu-btn{display:flex!important} .desktop-nav{display:none!important}}
+        @media(max-width:480px){
+          .header-inner{padding:0 14px!important;gap:10px!important;height:60px!important;}
+          .header-logo-img{height:42px!important;width:42px!important;}
+          .header-actions{gap:10px!important;}
+        }
+        @media(max-width:360px){
+          .header-actions{gap:7px!important;}
+          .header-account-btn{font-size:10px!important;}
+        }
+      `}</style>
 
       {/* Mobile Drawer */}
       {drawerOpen && (
@@ -3233,12 +3244,12 @@ function HeroSection() {
   return (
     <section className="hero-split" style={{position:"relative",width:"100%",minHeight:600,display:"grid",gridTemplateColumns:"1fr 1fr",overflow:"hidden",background:"#F6F3ED"}}>
       {/* Left: text */}
-      <div style={{display:"flex",flexDirection:"column",justifyContent:"center",padding:"80px 64px",zIndex:2}}>
+      <div className="hero-text" style={{display:"flex",flexDirection:"column",justifyContent:"center",padding:"80px 64px",zIndex:2}}>
         <p style={{fontSize:11,letterSpacing:"0.3em",textTransform:"uppercase",color:"#A9885A",marginBottom:20,animation:"fadeUp 0.5s ease",display:"flex",alignItems:"center",gap:14}}>
           <span style={{width:40,height:1,background:"#A9885A",display:"inline-block",flexShrink:0}} />
           {slide.tag}
         </p>
-        <h1 className="font-serif" style={{fontSize:"clamp(48px,5.2vw,84px)",fontWeight:500,lineHeight:1.04,color:"#1D1C18",marginBottom:24,whiteSpace:"pre-line",animation:"fadeUp 0.5s ease 0.1s both"}}>
+        <h1 className="font-serif hero-title" style={{fontSize:"clamp(48px,5.2vw,84px)",fontWeight:500,lineHeight:1.04,color:"#1D1C18",marginBottom:24,whiteSpace:"pre-line",animation:"fadeUp 0.5s ease 0.1s both"}}>
           {slide.title}
         </h1>
         <p style={{fontSize:14,color:"#6B675C",lineHeight:1.9,maxWidth:360,marginBottom:36,fontWeight:300,animation:"fadeUp 0.5s ease 0.2s both"}}>{slide.desc}</p>
@@ -3265,7 +3276,10 @@ function HeroSection() {
         <div style={{position:"absolute",inset:0,background:"linear-gradient(to right,rgba(246,243,237,0.35),transparent)"}} />
       </div>
 
-      <style>{`@media(max-width:768px){.hero-split{grid-template-columns:1fr!important;} .hero-split > div:last-child{min-height:350px!important;} .hero-split > div:first-child{padding:48px 24px!important;}}`}</style>
+      <style>{`
+        @media(max-width:768px){.hero-split{grid-template-columns:1fr!important;min-height:auto!important;} .hero-split > div:last-child{min-height:320px!important;} .hero-text{padding:40px 24px!important;}}
+        @media(max-width:480px){.hero-title{font-size:36px!important;} .hero-split > div:last-child{min-height:260px!important;} .hero-text{padding:32px 20px!important;}}
+      `}</style>
     </section>
   );
 }
@@ -3274,7 +3288,7 @@ function HeroSection() {
 function CategoryGrid() {
   const { navigate } = useApp();
   return (
-    <section style={{maxWidth:1320,margin:"0 auto",padding:"80px 24px"}}>
+    <section className="cat-section" style={{maxWidth:1320,margin:"0 auto",padding:"80px 24px"}}>
       <div style={{textAlign:"center",marginBottom:48}}>
         <p style={{fontSize:11,letterSpacing:"0.3em",textTransform:"uppercase",color:"#A9885A",marginBottom:8}}>Collections</p>
         <h2 className="font-serif" style={{fontSize:40,fontWeight:400,color:"#111"}}>Shop by Style</h2>
@@ -3282,8 +3296,8 @@ function CategoryGrid() {
       <div className="cat-grid" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gridTemplateRows:"auto auto",gap:4}}>
         {/* Big left tile — Kids' Kurtas */}
         <div className="category-card cat-tile-tall" style={{gridRow:"1/3"}} onClick={()=>navigate("category",{id:"kids"})}>
-          <div style={{position:"relative",height:"100%",minHeight:500}}>
-            <img src="/product/pro9-1.jpeg" alt="Kids' Kurtas" style={{width:"100%",height:"100%",objectFit:"cover",minHeight:500,display:"block"}} />
+          <div className="cat-tile-inner-lg" style={{position:"relative",height:"100%",minHeight:500}}>
+            <img className="cat-tile-img-lg" src="/product/pro9-1.jpeg" alt="Kids' Kurtas" style={{width:"100%",height:"100%",objectFit:"cover",minHeight:500,display:"block"}} />
             <div style={{position:"absolute",inset:0,background:"linear-gradient(to top,rgba(0,0,0,0.65) 0%,transparent 50%)"}} />
             <div style={{position:"absolute",bottom:28,left:28}}>
               <p style={{fontSize:11,letterSpacing:"0.2em",textTransform:"uppercase",color:"rgba(255,255,255,0.7)",marginBottom:6}}>Collection</p>
@@ -3294,8 +3308,8 @@ function CategoryGrid() {
         </div>
         {/* Top right — New Arrivals */}
         <div className="category-card cat-tile-wide" style={{gridColumn:"2/4"}} onClick={()=>navigate("search",{query:"new"})}>
-          <div style={{position:"relative",height:"100%",minHeight:240}}>
-            <img src="/product/pro11-1.jpeg" alt="New Arrivals" style={{width:"100%",height:"100%",objectFit:"cover",minHeight:240,display:"block"}} />
+          <div className="cat-tile-inner-sm" style={{position:"relative",height:"100%",minHeight:240}}>
+            <img className="cat-tile-img-sm" src="/product/pro11-1.jpeg" alt="New Arrivals" style={{width:"100%",height:"100%",objectFit:"cover",minHeight:240,display:"block"}} />
             <div style={{position:"absolute",inset:0,background:"linear-gradient(to top,rgba(0,0,0,0.6) 0%,transparent 60%)"}} />
             <div style={{position:"absolute",bottom:24,left:24}}>
               <h3 className="font-serif" style={{fontSize:26,fontWeight:400,color:"#fff",marginBottom:4}}>New Arrivals</h3>
@@ -3305,8 +3319,8 @@ function CategoryGrid() {
         </div>
         {/* Bottom mid — Festive */}
         <div className="category-card" onClick={()=>navigate("search",{query:"embroidered"})}>
-          <div style={{position:"relative",height:"100%",minHeight:240}}>
-            <img src="/product/pro2-1.jpeg" alt="Festive" style={{width:"100%",height:"100%",objectFit:"cover",minHeight:240,display:"block"}} />
+          <div className="cat-tile-inner-sm" style={{position:"relative",height:"100%",minHeight:240}}>
+            <img className="cat-tile-img-sm" src="/product/pro2-1.jpeg" alt="Festive" style={{width:"100%",height:"100%",objectFit:"cover",minHeight:240,display:"block"}} />
             <div style={{position:"absolute",inset:0,background:"linear-gradient(to top,rgba(0,0,0,0.6) 0%,transparent 60%)"}} />
             <div style={{position:"absolute",bottom:24,left:24}}>
               <h3 className="font-serif" style={{fontSize:26,fontWeight:400,color:"#fff",marginBottom:4}}>Festive</h3>
@@ -3316,14 +3330,23 @@ function CategoryGrid() {
         </div>
         {/* Bottom right — Sale */}
         <div className="category-card" onClick={()=>navigate("search",{query:"sale"})}>
-          <div style={{position:"relative",height:"100%",minHeight:240,background:"#1A3C34",display:"flex",alignItems:"center",justifyContent:"center",flexDirection:"column",gap:12,padding:24}}>
+          <div className="cat-tile-inner-sm" style={{position:"relative",height:"100%",minHeight:240,background:"#1A3C34",display:"flex",alignItems:"center",justifyContent:"center",flexDirection:"column",gap:12,padding:24}}>
             <p style={{fontSize:11,letterSpacing:"0.3em",textTransform:"uppercase",color:"#A9885A"}}>Limited Time</p>
             <h3 className="font-serif" style={{fontSize:34,fontWeight:400,color:"#F6F3ED",textAlign:"center",lineHeight:1.25}}>The Seasonal Sale<br/><em style={{color:"#C6A15B"}}>Up to 30% Off</em></h3>
             <button className="btn-primary" style={{marginTop:10,background:"transparent",borderColor:"#C6A15B",color:"#C6A15B"}}>Shop Sale →</button>
           </div>
         </div>
       </div>
-      <style>{`@media(max-width:768px){.cat-grid{grid-template-columns:1fr!important;grid-template-rows:auto!important;} .cat-tile-tall{grid-row:auto!important;} .cat-tile-wide{grid-column:auto!important;}}`}</style>
+      <style>{`
+        @media(max-width:768px){
+          .cat-section{padding:48px 20px!important;}
+          .cat-grid{grid-template-columns:1fr!important;grid-template-rows:auto!important;}
+          .cat-tile-tall{grid-row:auto!important;}
+          .cat-tile-wide{grid-column:auto!important;}
+          .cat-tile-inner-lg,.cat-tile-img-lg{min-height:320px!important;}
+          .cat-tile-inner-sm,.cat-tile-img-sm{min-height:200px!important;}
+        }
+      `}</style>
     </section>
   );
 }
@@ -3333,7 +3356,7 @@ function NewArrivalsSection() {
   const { navigate } = useApp();
   const newArrivals = PRODUCTS.filter(p=>p.isNew).slice(0,8);
   return (
-    <section style={{padding:"0 0 80px"}}>
+    <section className="new-arrivals-section" style={{padding:"0 0 80px"}}>
       <div style={{maxWidth:1320,margin:"0 auto",padding:"0 24px"}}>
         <div style={{display:"flex",alignItems:"flex-end",justifyContent:"space-between",marginBottom:40,flexWrap:"wrap",gap:16}}>
           <div>
@@ -3342,11 +3365,28 @@ function NewArrivalsSection() {
           </div>
           <button className="btn-outline" onClick={()=>navigate("search",{query:"new"})}>View All →</button>
         </div>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:24}}>
+        <div className="new-arrivals-grid" style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:24}}>
           {newArrivals.map(p=><ProductCard key={p.id} product={p} />)}
         </div>
       </div>
-      <style>{`@media(max-width:1024px){div[style*="repeat(4,1fr)"]{grid-template-columns:repeat(2,1fr)!important;}}`}</style>
+      <style>{`
+        @media(max-width:1024px){.new-arrivals-grid{grid-template-columns:repeat(2,1fr)!important;}}
+        @media(max-width:640px){
+          .new-arrivals-section{padding:0 0 48px;}
+          .new-arrivals-grid{
+            display:flex!important;
+            overflow-x:auto!important;
+            scroll-snap-type:x mandatory!important;
+            gap:14px!important;
+            margin:0 -24px!important;
+            padding:4px 24px 10px!important;
+            -webkit-overflow-scrolling:touch;
+            scrollbar-width:none;
+          }
+          .new-arrivals-grid::-webkit-scrollbar{display:none;}
+          .new-arrivals-grid > .product-card{flex:0 0 82%!important;scroll-snap-align:start!important;}
+        }
+      `}</style>
     </section>
   );
 }
@@ -3492,6 +3532,7 @@ function ShopThisLookSection() {
       {/* Grid Breakpoints */}
       <style>{`
         @media(max-width: 992px) {
+          .stl-container { padding: 56px 0 !important; }
           .stl-grid {
             grid-template-columns: 1fr !important;
             gap: 40px !important;
@@ -3514,6 +3555,7 @@ function PromoBannersSection() {
           {BANNERS_DATA.map((banner) => (
             <div
               key={banner.id}
+              className="promo-card"
               style={{
                 background: "#F2EEE6",
                 display: "flex",
@@ -3526,7 +3568,7 @@ function PromoBannersSection() {
               }}
             >
               {/* Left Side: Text Info */}
-              <div style={{ display: "flex", flexDirection: "column", zIndex: 2, maxWidth: "55%" }}>
+              <div className="promo-card-text" style={{ display: "flex", flexDirection: "column", zIndex: 2, maxWidth: "55%" }}>
                 <span style={{ fontSize: 10, fontWeight: "500", color: "#A9885A", letterSpacing: "0.25em", textTransform: "uppercase", marginBottom: 12 }}>
                   {banner.discount}
                 </span>
@@ -3560,7 +3602,7 @@ function PromoBannersSection() {
               </div>
 
               {/* Right Side: Visual Model Image */}
-              <div style={{ width: "45%", height: "100%", position: "relative" }}>
+              <div className="promo-card-img-wrap" style={{ width: "45%", height: "100%", position: "relative" }}>
                 <img
                   src={banner.image}
                   alt={banner.title}
@@ -3590,6 +3632,20 @@ function PromoBannersSection() {
             grid-template-columns: 1fr !important;
             gap: 16px !important;
           }
+          .promo-card {
+            flex-direction: column !important;
+            align-items: stretch !important;
+            height: auto !important;
+            padding: 28px 24px 0 !important;
+          }
+          .promo-card-text {
+            max-width: 100% !important;
+          }
+          .promo-card-img-wrap {
+            width: 100% !important;
+            height: 200px !important;
+            margin-top: 20px !important;
+          }
         }
       `}</style>
     </section>
@@ -3609,7 +3665,11 @@ function PremiumShowcaseCarousel() {
   const isDragging = useRef(false);
   const startX = useRef(0);
 
-  const cardWidth = 460;
+  // Cards scale down to fit narrow viewports instead of overflowing them —
+  // clamped between a legible minimum and the original desktop size.
+  const cardWidth = containerWidth > 0 ? Math.min(460, Math.max(240, containerWidth * 0.78)) : 460;
+  const cardHeight = Math.round(cardWidth * (540 / 460));
+  const isCompact = cardWidth < 340;
   const AUTO_SCROLL_DELAY = 3500;
 
   // Measure the track's parent width after mount (and on resize) instead of
@@ -3641,7 +3701,7 @@ function PremiumShowcaseCarousel() {
 
   const getBaseTranslateX = useCallback(() => {
     return (containerWidth / 2) - (cardWidth / 2) - (activeIndex * cardWidth);
-  }, [containerWidth, activeIndex]);
+  }, [containerWidth, activeIndex, cardWidth]);
 
   const handleNav = (index) => {
     if (index >= 0 && index < CAROUSEL_ITEMS.length) {
@@ -3699,6 +3759,7 @@ function PremiumShowcaseCarousel() {
 
   return (
     <section
+      className="showcase-section"
       style={{
         background: "radial-gradient(ellipse 80% 60% at 50% 30%, #1a1a18 0%, #0d0d0c 60%, #050505 100%)",
         padding: "110px 0",
@@ -3774,7 +3835,7 @@ function PremiumShowcaseCarousel() {
                 onClick={() => handleNav(idx)}
                 style={{
                   width: cardWidth,
-                  height: 540,
+                  height: cardHeight,
                   position: "relative",
                   flexShrink: 0,
                   transition: isDraggingState
@@ -3839,7 +3900,7 @@ function PremiumShowcaseCarousel() {
                     bottom: 0,
                     left: 0,
                     right: 0,
-                    padding: "0 40px 50px 40px",
+                    padding: isCompact ? "0 20px 26px" : "0 40px 50px 40px",
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
@@ -3852,7 +3913,7 @@ function PremiumShowcaseCarousel() {
                     className="font-serif"
                     style={{
                       color: "#fff",
-                      fontSize: isActive ? 34 : 24,
+                      fontSize: isActive ? (isCompact ? 22 : 34) : (isCompact ? 15 : 24),
                       fontWeight: "500",
                       letterSpacing: "0.02em",
                       margin: "0 0 16px 0",
@@ -3868,7 +3929,7 @@ function PremiumShowcaseCarousel() {
                       background: isActive ? "#fff" : "transparent",
                       color: isActive ? "#000" : "#fff",
                       border: "1px solid #fff",
-                      padding: "12px 32px",
+                      padding: isCompact ? "9px 20px" : "12px 32px",
                       fontSize: 11,
                       fontWeight: "600",
                       borderRadius: "30px",
@@ -3922,6 +3983,7 @@ function PremiumShowcaseCarousel() {
           />
         ))}
       </div>
+      <style>{`@media(max-width:768px){.showcase-section{padding:64px 0!important;}}`}</style>
     </section>
   );
 }
@@ -3930,7 +3992,7 @@ function PremiumShowcaseCarousel() {
 function StoreBanner() {
   const { navigate } = useApp();
   return (
-    <section style={{position:"relative",width:"100%",overflow:"hidden",height:480}}>
+    <section className="store-banner" style={{position:"relative",width:"100%",overflow:"hidden",height:480}}>
       <img src="/shop.png" alt="MD Fashion storefront" style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"center"}} />
       <div style={{position:"absolute",inset:0,background:"rgba(0,0,0,0.35)"}} />
       <div style={{position:"absolute",inset:0,display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",textAlign:"center",padding:"0 24px"}}>
@@ -3938,6 +4000,7 @@ function StoreBanner() {
         <h2 className="font-serif" style={{fontSize:"clamp(40px,5vw,72px)",fontWeight:300,color:"#fff",letterSpacing:"0.05em",marginBottom:28}}>Visit Our Store</h2>
         <button className="btn-outline" style={{color:"#fff",borderColor:"#fff",letterSpacing:"0.2em"}} onClick={()=>navigate("about")}>Get Directions</button>
       </div>
+      <style>{`@media(max-width:640px){.store-banner{height:340px!important;}}`}</style>
     </section>
   );
 }
@@ -3946,7 +4009,7 @@ function StoreBanner() {
 function SherwaniSection() {
   const { navigate } = useApp();
   return (
-    <section style={{maxWidth:1320,margin:"0 auto",padding:"80px 24px"}}>
+    <section className="sherwani-section" style={{maxWidth:1320,margin:"0 auto",padding:"80px 24px"}}>
       <div className="sherwani-grid" style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:64,alignItems:"center"}}>
         <div>
           <p style={{fontSize:11,letterSpacing:"0.3em",textTransform:"uppercase",color:"#A9885A",marginBottom:12}}>Ceremonial</p>
@@ -3963,7 +4026,7 @@ function SherwaniSection() {
           </div>
         </div>
       </div>
-      <style>{`@media(max-width:768px){.sherwani-grid{grid-template-columns:1fr!important;gap:32px!important;}}`}</style>
+      <style>{`@media(max-width:768px){.sherwani-section{padding:56px 20px!important;} .sherwani-grid{grid-template-columns:1fr!important;gap:32px!important;}}`}</style>
     </section>
   );
 }
@@ -3973,7 +4036,7 @@ function StatsStrip() {
   const stats=[{v:"10K+",l:"Happy Customers"},{v:"200+",l:"Fabric Designs"},{v:"3–5",l:"Day Delivery"},{v:"30",l:"Day Returns"}];
   return (
     <section style={{borderTop:"1px solid #E7E0D2",borderBottom:"1px solid #E7E0D2",padding:"40px 24px"}}>
-      <div style={{maxWidth:1320,margin:"0 auto",display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:24,textAlign:"center"}}>
+      <div className="stats-grid" style={{maxWidth:1320,margin:"0 auto",display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:24,textAlign:"center"}}>
         {stats.map(s=>(
           <div key={s.l}>
             <p className="font-serif" style={{fontSize:42,fontWeight:500,color:"#1A3C34",lineHeight:1}}>{s.v}</p>
@@ -3981,7 +4044,7 @@ function StatsStrip() {
           </div>
         ))}
       </div>
-      <style>{`@media(max-width:640px){div[style*="repeat(4,1fr)"]{grid-template-columns:repeat(2,1fr)!important;}}`}</style>
+      <style>{`@media(max-width:640px){.stats-grid{grid-template-columns:repeat(2,1fr)!important;}}`}</style>
     </section>
   );
 }
@@ -3990,30 +4053,37 @@ function StatsStrip() {
 function TestimonialsSection() {
   const reviews = TESTIMONIALS;
   return (
-    <section style={{padding:"80px 0"}}>
+    <section className="testimonials-section" style={{padding:"80px 0"}}>
       <div style={{maxWidth:1320,margin:"0 auto",padding:"0 24px"}}>
         <div style={{textAlign:"center",marginBottom:48}}>
           <p style={{fontSize:11,letterSpacing:"0.3em",textTransform:"uppercase",color:"#A9885A",marginBottom:8}}>Reviews</p>
           <h2 className="font-serif" style={{fontSize:36,fontWeight:400,color:"#111"}}>What Our Customers Say</h2>
         </div>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:24}}>
+        <div className="testimonials-grid" style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:24}}>
           {reviews.map(r=>(
-            <div key={r.name} style={{border:"1px solid #E7E0D2",background:"#fff",padding:28,transition:"all 0.3s ease"}} onMouseEnter={e=>e.currentTarget.style.boxShadow="0 12px 36px rgba(107,90,58,0.12)"} onMouseLeave={e=>e.currentTarget.style.boxShadow="none"}>
+            <div key={r.name} className="testimonial-card" style={{border:"1px solid #E7E0D2",background:"#fff",padding:28,transition:"all 0.3s ease",minWidth:0}} onMouseEnter={e=>e.currentTarget.style.boxShadow="0 12px 36px rgba(107,90,58,0.12)"} onMouseLeave={e=>e.currentTarget.style.boxShadow="none"}>
               <span className="font-serif" style={{fontSize:40,lineHeight:0.6,color:"#C6A15B",display:"block",marginBottom:12}}>&ldquo;</span>
               <Stars rating={r.rating} />
               <p style={{fontSize:13,color:"#5F5B50",lineHeight:1.8,margin:"12px 0 16px",fontStyle:"italic"}}>{r.text}</p>
               <div style={{display:"flex",alignItems:"center",gap:10,paddingTop:12,borderTop:"1px solid #F2EEE6"}}>
                 <div style={{width:36,height:36,background:"#1A3C34",color:"#fff",borderRadius:"50%",display:"flex",alignItems:"center",justifyContent:"center",fontSize:13,fontWeight:600,flexShrink:0}}>{r.avatar}</div>
-                <div>
-                  <p style={{fontSize:13,fontWeight:600,color:"#111"}}>{r.name}</p>
-                  <p style={{fontSize:11,color:"#96917E"}}>{r.city}</p>
+                <div style={{minWidth:0,overflow:"hidden"}}>
+                  <p style={{fontSize:13,fontWeight:600,color:"#111",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{r.name}</p>
+                  <p style={{fontSize:11,color:"#96917E",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{r.city}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
-      <style>{`@media(max-width:1024px){div[style*="repeat(4,1fr)"]{grid-template-columns:repeat(2,1fr)!important;}}`}</style>
+      <style>{`
+        @media(max-width:1024px){.testimonials-grid{grid-template-columns:repeat(2,1fr)!important;}}
+        @media(max-width:640px){
+          .testimonials-section{padding:48px 0!important;}
+          .testimonials-grid{grid-template-columns:1fr!important;gap:16px!important;}
+          .testimonial-card{padding:20px!important;}
+        }
+      `}</style>
     </section>
   );
 }
@@ -4023,10 +4093,10 @@ function NewsletterSection() {
   const [email, setEmail] = useState("");
   const [sent, setSent] = useState(false);
   return (
-    <section style={{background:"#171613",padding:"90px 24px"}}>
+    <section className="newsletter-section" style={{background:"#171613",padding:"90px 24px"}}>
       <div style={{maxWidth:480,margin:"0 auto",textAlign:"center"}}>
         <p style={{fontSize:11,letterSpacing:"0.3em",textTransform:"uppercase",color:"#A9885A",marginBottom:12}}>Newsletter</p>
-        <h2 className="font-serif" style={{fontSize:40,fontWeight:400,color:"#fff",marginBottom:12}}>Get 10% Off<br/>Your First Order</h2>
+        <h2 className="font-serif newsletter-title" style={{fontSize:40,fontWeight:400,color:"#fff",marginBottom:12}}>Get 10% Off<br/>Your First Order</h2>
         <p style={{fontSize:13,color:"#8F8B7E",lineHeight:1.8,marginBottom:32}}>New arrival alerts, styling tips, and exclusive offers — no spam, we promise.</p>
         {sent ? (
           <div style={{border:"1px solid #3A382F",padding:"20px 24px",color:"#C6A15B",fontSize:13,letterSpacing:"0.04em",animation:"fadeIn 0.3s ease"}}>
@@ -4041,6 +4111,7 @@ function NewsletterSection() {
         )}
         <p style={{fontSize:11,color:"#7A7568",marginTop:16,letterSpacing:"0.04em"}}>Use code <span style={{color:"#C6A15B",fontWeight:600,letterSpacing:"0.1em"}}>EID10</span> at checkout for 10% off.</p>
       </div>
+      <style>{`@media(max-width:640px){.newsletter-section{padding:56px 20px!important;} .newsletter-title{font-size:30px!important;}}`}</style>
     </section>
   );
 }
@@ -4065,13 +4136,13 @@ function TrustStrip() {
 function HowItWorksSection() {
   const steps=[{icon:"search",title:"Browse & Pick",desc:"Explore curated collections by category, fabric, or occasion."},{icon:"card",title:"Easy Checkout",desc:"Pay with JazzCash, Easypaisa, card, or Cash on Delivery."},{icon:"truck",title:"Fast Delivery",desc:"Delivered anywhere in Pakistan within 3–5 business days."},{icon:"returns",title:"30-Day Returns",desc:"Not happy? Return within 30 days, no questions asked."}];
   return (
-    <section style={{background:"#F6F3ED",padding:"80px 0"}}>
+    <section className="how-it-works-section" style={{background:"#F6F3ED",padding:"80px 0"}}>
       <div style={{maxWidth:1320,margin:"0 auto",padding:"0 24px"}}>
         <div style={{textAlign:"center",marginBottom:48}}>
           <p style={{fontSize:11,letterSpacing:"0.3em",textTransform:"uppercase",color:"#A9885A",marginBottom:8}}>The Process</p>
           <h2 className="font-serif" style={{fontSize:36,fontWeight:400,color:"#111"}}>How MD Fashion Works</h2>
         </div>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:40,textAlign:"center"}}>
+        <div className="how-it-works-grid" style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:40,textAlign:"center"}}>
           {steps.map((s,i)=>(
             <div key={s.title}>
               <div style={{width:56,height:56,border:"1px solid #D9D2C2",borderRadius:"50%",display:"flex",alignItems:"center",justifyContent:"center",margin:"0 auto 16px",transition:"all 0.3s"}} onMouseEnter={e=>e.currentTarget.style.borderColor="#A9885A"} onMouseLeave={e=>e.currentTarget.style.borderColor="#D9D2C2"}><LineIcon name={s.icon} size={22} color="#1A3C34" /></div>
@@ -4082,7 +4153,11 @@ function HowItWorksSection() {
           ))}
         </div>
       </div>
-      <style>{`@media(max-width:768px){section[style*="background: rgb(246"] div[style*="repeat(4,1fr)"]{grid-template-columns:repeat(2,1fr)!important;}}`}</style>
+      <style>{`
+        @media(max-width:768px){.how-it-works-grid{grid-template-columns:repeat(2,1fr)!important;gap:28px 20px!important;}}
+        @media(max-width:640px){.how-it-works-section{padding:48px 0!important;}}
+        @media(max-width:480px){.how-it-works-grid{grid-template-columns:1fr!important;gap:32px!important;}}
+      `}</style>
     </section>
   );
 }
@@ -4127,7 +4202,10 @@ function Footer() {
       <div style={{borderTop:"1px solid #26241E",padding:"22px 24px",textAlign:"center"}}>
         <p style={{fontSize:11,color:"#6B675C",letterSpacing:"0.12em",textTransform:"uppercase"}}>© 2026 MD Fashion · All rights reserved</p>
       </div>
-      <style>{`@media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr!important;gap:32px!important;}}`}</style>
+      <style>{`
+        @media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr!important;gap:32px!important;}}
+        @media(max-width:480px){.footer-grid{grid-template-columns:1fr!important;gap:36px!important;padding:0 20px 40px!important;}}
+      `}</style>
     </footer>
   );
 }
@@ -4281,13 +4359,15 @@ function ListingPage({ mode }) {
               <button className="btn-primary" onClick={clearFilters}>Clear Filters</button>
             </div>
           ) : (
-            <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:24}}>
+            <div className="listing-grid" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:24}}>
               {filtered.map(p=><ProductCard key={p.id} product={p} />)}
             </div>
           )}
         </div>
       </div>
-      <style>{`@media(max-width:768px){aside{display:${filtersOpen?"block":"none"}!important;width:100%!important;} div[style*="repeat(3,1fr)"]{grid-template-columns:repeat(2,1fr)!important;}}`}</style>
+      <style>{`
+        @media(max-width:768px){aside{display:${filtersOpen?"block":"none"}!important;width:100%!important;} .listing-grid{grid-template-columns:repeat(2,1fr)!important;gap:14px!important;}}
+      `}</style>
     </div>
   );
 }
@@ -4384,15 +4464,15 @@ function ProductPage() {
 
           {/* Size — shows price per size */}
           <div style={{marginBottom:20}}>
-            <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:10}}>
-              <p style={{fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",fontWeight:600,margin:0}}>Size {size && <span style={{color:"#1A3C34",fontWeight:400}}>— {formatPKR(getSizePrice(product, size))}</span>}</p>
-              <button type="button" className="nav-link" onClick={()=>setShowSizeGuide(true)} style={{background:"none",border:"none",cursor:"pointer",fontSize:11,color:"#1A3C34",letterSpacing:"0.04em",textTransform:"uppercase",fontWeight:500}}>Size Guide</button>
+            <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",flexWrap:"wrap",rowGap:4,columnGap:12,marginBottom:10}}>
+              <p style={{fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",fontWeight:600,margin:0,minWidth:0}}>Size {size && <span style={{color:"#1A3C34",fontWeight:400}}>— {formatPKR(getSizePrice(product, size))}</span>}</p>
+              <button type="button" className="nav-link" onClick={()=>setShowSizeGuide(true)} style={{background:"none",border:"none",cursor:"pointer",fontSize:11,color:"#1A3C34",letterSpacing:"0.04em",textTransform:"uppercase",fontWeight:500,flexShrink:0}}>Size Guide</button>
             </div>
             <div style={{display:"flex",flexWrap:"wrap",gap:6}}>
               {product.sizes.map(s=>(
-                <button key={s} onClick={()=>{setSize(s);setError("");}} title={`${formatPKR(getSizePrice(product, s))}`} style={{minWidth:48,height:40,padding:"0 8px",border:size===s?"1px solid #111":"1px solid #D9D2C2",background:size===s?"#111":"#fff",color:size===s?"#fff":"#111",fontSize:12,fontWeight:500,cursor:"pointer",transition:"all 0.2s",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",lineHeight:1.1}}>
+                <button key={s} onClick={()=>{setSize(s);setError("");}} title={`${formatPKR(getSizePrice(product, s))}`} style={{minWidth:48,height:40,padding:"0 8px",border:size===s?"1px solid #111":"1px solid #D9D2C2",background:size===s?"#111":"#fff",color:size===s?"#fff":"#111",fontSize:12,fontWeight:500,cursor:"pointer",transition:"all 0.2s",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",lineHeight:1.1,flexShrink:0}}>
                   <span>{s}</span>
-                  <span style={{fontSize:9,opacity:0.85}}>{formatPKR(getSizePrice(product, s)).replace("PKR","")}</span>
+                  <span style={{fontSize:9,opacity:0.85,whiteSpace:"nowrap"}}>{formatPKR(getSizePrice(product, s)).replace("PKR","")}</span>
                 </button>
               ))}
             </div>
@@ -4477,7 +4557,7 @@ function ProductPage() {
       {related.length>0 && (
         <section style={{marginTop:80,borderTop:"1px solid #E7E0D2",paddingTop:60}}>
           <h2 className="font-serif" style={{fontSize:32,fontWeight:400,marginBottom:32,color:"#111"}}>You might also like</h2>
-          <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:24}}>
+          <div className="related-products-grid" style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:24}}>
             {related.map(p=><ProductCard key={p.id} product={p} />)}
           </div>
         </section>
@@ -4493,7 +4573,9 @@ function ProductPage() {
         </div>
       )}
 
-      <style>{`@media(max-width:768px){div[style*="gridTemplateColumns: 1fr 1fr"]{grid-template-columns:1fr!important;gap:32px!important;} div[style*="repeat(4,1fr)"]{grid-template-columns:repeat(2,1fr)!important;}}`}</style>
+      <style>{`
+        @media(max-width:768px){.related-products-grid{grid-template-columns:repeat(2,1fr)!important;gap:16px!important;}}
+      `}</style>
     </div>
   );
 }
@@ -4535,23 +4617,23 @@ function CartPage() {
 
       <div className="cart-grid" style={{display:"grid",gridTemplateColumns:"1fr 340px",gap:40}}>
         <div>
-          <div style={{display:"grid",gridTemplateColumns:"auto 1fr auto auto",gap:16,padding:"0 0 12px",borderBottom:"1px solid #E7E0D2",fontSize:10,letterSpacing:"0.15em",textTransform:"uppercase",color:"#96917E",fontWeight:600}}>
+          <div className="cart-header-row" style={{display:"grid",gridTemplateColumns:"auto 1fr auto auto",gap:16,padding:"0 0 12px",borderBottom:"1px solid #E7E0D2",fontSize:10,letterSpacing:"0.15em",textTransform:"uppercase",color:"#96917E",fontWeight:600}}>
             <span style={{gridColumn:"span 2"}}>Product</span><span style={{textAlign:"center"}}>Quantity</span><span style={{textAlign:"right"}}>Total</span>
           </div>
           {items.map(item=>(
-            <div key={`${item.id}-${item.size}-${item.color}`} style={{display:"grid",gridTemplateColumns:"80px 1fr auto auto",gap:16,alignItems:"center",padding:"16px 0",borderBottom:"1px solid #F2EEE6"}}>
-              <img src={item.product.images[0]} alt={item.product.name} onError={onImgError} style={{width:80,height:96,objectFit:"cover",background:"#F2EEE6"}} />
-              <div>
+            <div key={`${item.id}-${item.size}-${item.color}`} className="cart-item-row" style={{display:"grid",gridTemplateColumns:"80px 1fr auto auto",gap:16,alignItems:"center",padding:"16px 0",borderBottom:"1px solid #F2EEE6"}}>
+              <img className="cart-item-img" src={item.product.images[0]} alt={item.product.name} onError={onImgError} style={{width:80,height:96,objectFit:"cover",background:"#F2EEE6"}} />
+              <div className="cart-item-details">
                 <p style={{fontSize:13,fontWeight:500,color:"#111",marginBottom:4}}>{item.product.name}</p>
                 <p style={{fontSize:11,color:"#96917E",letterSpacing:"0.06em"}}>Size: {item.size} · Color: {item.color}</p>
                 <button onClick={()=>removeFromCart(item.id,item.size,item.color)} style={{background:"none",border:"none",cursor:"pointer",fontSize:11,color:"#B3372B",marginTop:6,padding:0,letterSpacing:"0.06em",textDecoration:"underline"}}>Remove</button>
               </div>
-              <div style={{display:"inline-flex",alignItems:"center",border:"1px solid #D9D2C2"}}>
+              <div className="cart-item-qty" style={{display:"inline-flex",alignItems:"center",border:"1px solid #D9D2C2"}}>
                 <button onClick={()=>updateQty(item.id,item.size,item.color,item.qty-1)} style={{width:32,height:32,border:"none",background:"#fff",cursor:"pointer",fontSize:16}}>−</button>
                 <span style={{width:32,textAlign:"center",fontSize:12,fontWeight:500}}>{item.qty}</span>
                 <button onClick={()=>updateQty(item.id,item.size,item.color,item.qty+1)} style={{width:32,height:32,border:"none",background:"#fff",cursor:"pointer",fontSize:16}}>+</button>
               </div>
-              <div style={{textAlign:"right"}}><span style={{fontSize:"14px",fontWeight:600,color:"#111"}}>{formatPKR(getSizePrice(item.product, item.size) * item.qty)}</span></div>
+              <div className="cart-item-total" style={{textAlign:"right"}}><span style={{fontSize:"14px",fontWeight:600,color:"#111"}}>{formatPKR(getSizePrice(item.product, item.size) * item.qty)}</span></div>
             </div>
           ))}
           <button onClick={()=>navigate("home")} style={{background:"none",border:"none",cursor:"pointer",fontSize:12,color:"#1A3C34",letterSpacing:"0.08em",marginTop:16,textDecoration:"underline"}}>← Continue Shopping</button>
@@ -4575,7 +4657,22 @@ function CartPage() {
           <button className="btn-primary" style={{width:"100%",justifyContent:"center",marginTop:20}} onClick={()=>navigate("checkout")}>Proceed to Checkout →</button>
         </div>
       </div>
-      <style>{`@media(max-width:768px){.cart-grid{grid-template-columns:1fr!important;}}`}</style>
+      <style>{`
+        @media(max-width:768px){.cart-grid{grid-template-columns:1fr!important;}}
+        @media(max-width:640px){
+          .cart-header-row{display:none!important;}
+          .cart-item-row{
+            grid-template-columns:72px 1fr!important;
+            grid-template-rows:auto auto auto!important;
+            row-gap:8px!important;
+            column-gap:14px!important;
+          }
+          .cart-item-img{grid-column:1!important;grid-row:1/4!important;width:72px!important;height:88px!important;}
+          .cart-item-details{grid-column:2!important;grid-row:1!important;}
+          .cart-item-qty{grid-column:2!important;grid-row:2!important;justify-self:start!important;}
+          .cart-item-total{grid-column:2!important;grid-row:3!important;justify-self:start!important;text-align:left!important;}
+        }
+      `}</style>
     </div>
   );
 }
@@ -4932,7 +5029,7 @@ function OrderDetailModal({ order, onClose }) {
   return (
     <div style={{position:"fixed",inset:0,zIndex:100,display:"flex",alignItems:"center",justifyContent:"center",padding:16,animation:"fadeIn 0.2s ease"}}>
       <div style={{position:"absolute",inset:0,background:"rgba(0,0,0,0.6)",backdropFilter:"blur(4px)"}} onClick={onClose} />
-      <div style={{position:"relative",background:"#fff",width:"100%",maxWidth:680,maxHeight:"88vh",overflowY:"auto",animation:"modalIn 0.25s ease",padding:32}}>
+      <div className="order-modal-panel" style={{position:"relative",background:"#fff",width:"100%",maxWidth:680,maxHeight:"88vh",overflowY:"auto",animation:"modalIn 0.25s ease",padding:32}}>
         <button onClick={onClose} style={{position:"absolute",top:16,right:16,width:32,height:32,border:"1px solid #E7E0D2",background:"#fff",cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",fontSize:16,color:"#6B675C"}}>✕</button>
 
         <p style={{fontSize:11,letterSpacing:"0.14em",textTransform:"uppercase",color:"#96917E",marginBottom:4}}>Order</p>
@@ -4964,7 +5061,7 @@ function OrderDetailModal({ order, onClose }) {
           ))}
         </div>
 
-        <div style={{borderTop:"1px solid #E7E0D2",marginTop:20,paddingTop:20,display:"grid",gridTemplateColumns:"1fr 1fr",gap:20}}>
+        <div className="order-modal-info" style={{borderTop:"1px solid #E7E0D2",marginTop:20,paddingTop:20,display:"grid",gridTemplateColumns:"1fr 1fr",gap:20}}>
           <div>
             <p style={{fontSize:10,letterSpacing:"0.14em",textTransform:"uppercase",color:"#96917E",marginBottom:6}}>Shipping To</p>
             <p style={{fontSize:13,color:"#111"}}>{order.name}</p>
@@ -4982,6 +5079,7 @@ function OrderDetailModal({ order, onClose }) {
           </div>
         </div>
       </div>
+      <style>{`@media(max-width:560px){.order-modal-panel{padding:22px!important;} .order-modal-info{grid-template-columns:1fr!important;gap:20px!important;}}`}</style>
     </div>
   );
 }
@@ -5397,11 +5495,11 @@ function AccountPage() {
 
 function AboutPage() {
   return (
-    <div style={{maxWidth:800,margin:"0 auto",padding:"80px 24px"}}>
+    <div className="about-page" style={{maxWidth:800,margin:"0 auto",padding:"80px 24px"}}>
       <Breadcrumbs items={[{label:"Home",page:"home"},{label:"About Us"}]} />
       <p style={{fontSize:11,letterSpacing:"0.3em",textTransform:"uppercase",color:"#A9885A",marginBottom:14}}>Our Story</p>
-      <h1 className="font-serif" style={{fontSize:56,fontWeight:400,marginBottom:32,lineHeight:1.1}}>About<br/>MD Fashion</h1>
-      <style>{`@media(max-width:640px){.about-grid{grid-template-columns:1fr!important;}}`}</style>
+      <h1 className="font-serif about-title" style={{fontSize:56,fontWeight:400,marginBottom:32,lineHeight:1.1}}>About<br/>MD Fashion</h1>
+      <style>{`@media(max-width:640px){.about-page{padding:56px 20px!important;} .about-title{font-size:38px!important;} .about-grid{grid-template-columns:1fr!important;}}`}</style>
       <div className="about-grid" style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:32,borderTop:"1px solid #E7E0D2",paddingTop:32}}>
         <p style={{fontSize:14,color:"#6B675C",lineHeight:1.9,fontWeight:300}}>MD Fashion brings together modern silhouettes and traditional craftsmanship, with a focus on fabrics suited to Pakistan's climate and occasions.</p>
         <p style={{fontSize:14,color:"#6B675C",lineHeight:1.9,fontWeight:300}}>Every order ships nationwide with Cash on Delivery, JazzCash, Easypaisa, and card options at checkout, and comes with a 30-day return policy.</p>
@@ -5428,10 +5526,11 @@ function AboutPage() {
 function FaqPage() {
   const faqs = FAQS;
   return (
-    <div style={{maxWidth:720,margin:"0 auto",padding:"80px 24px"}}>
+    <div className="faq-page" style={{maxWidth:720,margin:"0 auto",padding:"80px 24px"}}>
       <Breadcrumbs items={[{label:"Home",page:"home"},{label:"FAQs"}]} />
       <p style={{fontSize:11,letterSpacing:"0.3em",textTransform:"uppercase",color:"#A9885A",marginBottom:14}}>Help Centre</p>
-      <h1 className="font-serif" style={{fontSize:48,fontWeight:400,marginBottom:40}}>Frequently Asked<br/>Questions</h1>
+      <h1 className="font-serif faq-title" style={{fontSize:48,fontWeight:400,marginBottom:40}}>Frequently Asked<br/>Questions</h1>
+      <style>{`@media(max-width:640px){.faq-page{padding:56px 20px!important;} .faq-title{font-size:34px!important;}}`}</style>
       <div style={{display:"flex",flexDirection:"column",gap:0}}>
         {faqs.map((f,i)=>(
           <details key={i} style={{borderTop:"1px solid #E7E0D2",padding:"20px 0"}}>
