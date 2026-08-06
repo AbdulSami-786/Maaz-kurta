@@ -5587,16 +5587,6 @@ function PageSEO() {
   let noindex = false;
   let jsonLd = null;
 
-  const orgSchema = {
-    "@type": "ClothingStore",
-    name: SITE_NAME,
-    url: SITE_URL,
-    logo: absUrl("/logo.png"),
-    image: absUrl("/logo.png"),
-    description: "Kids' kurta, sherwani, and ethnic wear store shipping across Pakistan.",
-    address: { "@type": "PostalAddress", streetAddress: "Tariq Road, Kurta Galli", addressCountry: "PK" },
-  };
-
   const breadcrumb = (items) => ({
     "@type": "BreadcrumbList",
     itemListElement: items.map((it, i) => ({
@@ -5648,7 +5638,27 @@ function PageSEO() {
         : q === "sale" ? "Kids' kurta and sherwani sale at MD Fashion — save on ethnic wear for boys and girls, Cash on Delivery available."
         : `Search results for "${page.query || ""}" at MD Fashion.`;
       noindex = !known[q];
-      if (known[q]) jsonLd = { "@context": "https://schema.org", ...orgSchema, "@type":"CollectionPage", name:title, url:`${SITE_URL}${path}` };
+      if (known[q]) {
+        const items = (q === "sale" ? PRODUCTS.filter(p => p.salePrice) : q === "new" ? PRODUCTS.filter(p => p.isNew) : PRODUCTS.filter(p => p.name.toLowerCase().includes(q))).slice(0, 24);
+        jsonLd = {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "CollectionPage",
+              name: title,
+              url: `${SITE_URL}${path}`,
+              mainEntity: {
+                "@type": "ItemList",
+                itemListElement: items.map((p, i) => ({
+                  "@type": "ListItem", position: i + 1, name: p.name,
+                  url: `${SITE_URL}${routeFor({ name:"product", id:p.id })}`,
+                })),
+              },
+            },
+            breadcrumb([{ name:"Home", path:"/" }, { name: label }]),
+          ],
+        };
+      }
       break;
     }
     case "product": {
