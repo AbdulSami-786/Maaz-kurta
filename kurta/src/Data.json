@@ -1033,8 +1033,8 @@
       "description": "An ivory sherwani jacket with dense sequin and thread embroidery in a scalloped motif, finished with a Mandarin collar, brooch-style button closures, and a mock pocket square. Structured and formal, it's designed for weddings, Eid, and the biggest occasions on the calendar.",
       "care": "Dry clean only. Store on a padded hanger or folded flat away from direct sunlight. Avoid contact with perfume or water, as this may mark the embroidery.",
       "images": [
-        "./product/pro13-1.jpeg",
-        "./product/pro13-2.jpeg"
+        "../product/pro13-1.jpeg",
+        "../product/pro13-2.jpeg"
       ]
     },
     {
