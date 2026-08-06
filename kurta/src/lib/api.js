@@ -1,4 +1,4 @@
-const API_URL = import.meta.env.VITE_APPS_SCRIPT_URL;
+const API_URL = "https://script.google.com/macros/s/AKfycbw3k4sqBqbbwaJWpFdx4hn6GZfPdMhntzz24-Gk5cu8vB09DUpq_L8DeWE30iuvwjEcoA/exec";
 const TOKEN_KEY = "kurta_token";
 
 export const getToken = () => localStorage.getItem(TOKEN_KEY);
