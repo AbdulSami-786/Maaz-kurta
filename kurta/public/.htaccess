@@ -1,0 +1,11 @@
+# SPA fallback for Apache/cPanel-style hosting — lets deep links like
+# /kids-kurta or /product/... load correctly on direct visit or refresh,
+# instead of 404ing, while leaving real files (images, sitemap, etc) alone.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+  RewriteRule ^ /index.html [L]
+</IfModule>
