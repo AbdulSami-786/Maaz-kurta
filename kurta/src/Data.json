@@ -1,0 +1,1093 @@
+{
+  "slides": [
+    {
+      "tag": "New Arrivals 2026",
+      "title": "The Kids' Kurta\nCollection",
+      "desc": "Crafted, customized, and effortless. Traditional elegance for every occasion.",
+      "ctaText": "Shop Kids' Kurtas",
+      "ctaCategory": "kids",
+      "imgSrc": "./product/pro9-1.jpeg"
+    },
+    {
+      "tag": "Eid & Wedding Edit",
+      "title": "Festive Looks\nFor Little Ones",
+      "desc": "Embroidery, mirror work, and zari booti weaves — dressed up for the biggest days.",
+      "ctaText": "Shop New Arrivals",
+      "ctaCategory": "kids",
+      "imgSrc": "./product/pro11-1.jpeg"
+    },
+    {
+      "tag": "Everyday Essentials",
+      "title": "Built for\nEveryday Play",
+      "desc": "Soft cotton kurtas that are easy to wear and even easier to move in.",
+      "ctaText": "View All",
+      "ctaCategory": "kids",
+      "imgSrc": "./product/pro3-1.jpeg"
+    }
+  ],
+  "categories": [
+    {
+      "id": "kids",
+      "label": "Kids' Kurtas"
+    }
+  ],
+  "colorSwatches": {
+    "Ivory": "#FFFFF0",
+    "Teal": "#1A3C34",
+    "Maroon": "#7B1E1E",
+    "Navy": "#1B2A4A",
+    "Olive": "#6B7A3A",
+    "Black": "#111111",
+    "Purple": "#6B21A8",
+    "Royal Blue": "#1e3a8a",
+    "Mustard": "#B8860B",
+    "Peacock Blue": "#0F6E7C",
+    "Rust": "#A6501F",
+    "Powder Blue": "#AFC8D8",
+    "Parrot Green": "#4C9A2A",
+    "Sage Green": "#9CAF88",
+    "Aqua": "#2FB6A5",
+    "Pistachio": "#CFE0B8"
+  },
+  "banners": [
+    {
+      "id": 1,
+      "discount": "New Arrivals",
+      "title": "Fresh In",
+      "subtitle": "This week's new kurtas",
+      "image": "./product/pro11-1.jpeg",
+      "link": {
+        "name": "search",
+        "params": {
+          "query": "new"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "discount": "Occasion Wear",
+      "title": "Wedding & Sherwani",
+      "subtitle": "Dressed up for the big day",
+      "image": "./product/pro13-1.jpeg",
+      "link": {
+        "name": "search",
+        "params": {
+          "query": "sherwani"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "discount": "Everyday Essentials",
+      "title": "Easy Cotton Kurtas",
+      "subtitle": "Soft, breathable, easy to wear",
+      "image": "./product/pro3-1.jpeg",
+      "link": {
+        "name": "search",
+        "params": {
+          "query": "cotton"
+        }
+      }
+    }
+  ],
+  "shopTheLook": {
+    "bundleTag": "Bundle & Save",
+    "title": "Shop the Look",
+    "featureImage": "./product/pro13-1.jpeg",
+    "items": [
+      {
+        "id": "item-01",
+        "category": "Sherwani",
+        "title": "Ivory Sequin Embroidered Sherwani",
+        "price": 2500,
+        "image": "./product/pro13-1.jpeg"
+      },
+      {
+        "id": "item-02",
+        "category": "Kurta",
+        "title": "Sage Green Sequin Embroidered Kurta",
+        "price": 2500,
+        "image": "./product/pro9-1.jpeg"
+      },
+      {
+        "id": "item-03",
+        "category": "Kurta",
+        "title": "Navy Sequin Embroidered Kurta",
+        "price": 2500,
+        "image": "./product/pro11-1.jpeg"
+      }
+    ]
+  },
+  "showcaseCarousel": [
+    {
+      "id": 1,
+      "title": "Wedding & Sherwani Edit",
+      "query": "sherwani",
+      "img": "./product/pro13-1.jpeg"
+    },
+    {
+      "id": 2,
+      "title": "Sequin & Mirror Work",
+      "query": "sequin",
+      "img": "./product/pro9-1.jpeg"
+    },
+    {
+      "id": 3,
+      "title": "Festive Luxe",
+      "query": "embroidered",
+      "img": "./product/pro2-1.jpeg"
+    },
+    {
+      "id": 4,
+      "title": "Everyday Cotton",
+      "query": "cotton",
+      "img": "./product/pro3-1.jpeg"
+    },
+    {
+      "id": 5,
+      "title": "New Arrivals",
+      "query": "new",
+      "img": "./product/pro11-1.jpeg"
+    },
+    {
+      "id": 6,
+      "title": "Zari Booti Weaves",
+      "query": "zari",
+      "img": "./product/pro6-1.jpeg"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Aiman R.",
+      "city": "Karachi",
+      "rating": 5,
+      "text": "Ordered the Mustard Floral Embroidered Kurta for Eid and got so many compliments. Fabric is so soft and delivery was super fast!",
+      "avatar": "A"
+    },
+    {
+      "name": "Bilal K.",
+      "city": "Lahore",
+      "rating": 4,
+      "text": "The Peacock Blue Mirror-Work Kurta is exactly what I wanted for my son. Great stitching, true to size.",
+      "avatar": "B"
+    },
+    {
+      "name": "Sana M.",
+      "city": "Islamabad",
+      "rating": 5,
+      "text": "The Sage Green Sequin Embroidered Kurta arrived beautifully packaged. Quality is premium.",
+      "avatar": "S"
+    },
+    {
+      "name": "Hassan A.",
+      "city": "Peshawar",
+      "rating": 5,
+      "text": "The Ivory Sequin Embroidered Sherwani was perfect for the wedding. So many compliments on the embroidery.",
+      "avatar": "H"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What payment methods do you accept?",
+      "a": "We accept JazzCash, Easypaisa, major credit/debit cards, and Cash on Delivery."
+    },
+    {
+      "q": "How long does delivery take?",
+      "a": "Orders are typically delivered within 3–5 business days across Pakistan."
+    },
+    {
+      "q": "What is your return policy?",
+      "a": "Items can be returned within 30 days of delivery in original condition with tags attached."
+    },
+    {
+      "q": "Do you ship internationally?",
+      "a": "Currently we ship within Pakistan only. International shipping is coming soon."
+    }
+  ],
+  "products": [
+    {
+      "id": "kk-001",
+      "name": "Mustard Floral Embroidered Kurta",
+      "category": "kids",
+      "price": 2500,
+      "salePrice": null,
+      "isNew": true,
+      "rating": 4.6,
+      "reviews": 18,
+      "colors": [
+        "Mustard"
+      ],
+      "colorImages": {
+        "Mustard": [
+          "./product/pro1-1.jpeg",
+          "./product/pro1-2.jpeg"
+        ]
+      },
+      "sizes": [
+        "16",
+        "18",
+        "20",
+        "22",
+        "24",
+        "26",
+        "28",
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "sizePrices": {
+        "16": 2500,
+        "18": 2500,
+        "20": 2500,
+        "22": 2500,
+        "24": 2500,
+        "26": 3500,
+        "28": 3500,
+        "30": 3500,
+        "32": 3500,
+        "34": 3500,
+        "36": 3500
+      },
+      "fabric": "Embroidered Cotton",
+      "description": "A rich mustard kurta with dense floral thread embroidery running edge to edge, finished with a Mandarin collar and fabric-covered buttons. The soft cotton base and full sleeves make it easy to wear for a full day of festivities, from Eid mornings to family gatherings.",
+      "care": "Gentle hand wash or machine wash on delicate cycle. Wash with similar colors and use a mild detergent only. Do not bleach. Iron on low heat from the reverse side and hang to dry in shade.",
+      "images": [
+        "./product/pro1-1.jpeg",
+        "./product/pro1-2.jpeg"
+      ]
+    },
+    {
+      "id": "kk-002",
+      "name": "Peacock Blue Mirror-Work Kurta",
+      "category": "kids",
+      "price": 2500,
+      "salePrice": null,
+      "isNew": false,
+      "rating": 4.8,
+      "reviews": 27,
+      "colors": [
+        "Peacock Blue"
+      ],
+      "colorImages": {
+        "Peacock Blue": [
+          "./product/pro2-1.jpeg",
+          "./product/pro2-2.jpeg"
+        ]
+      },
+      "sizes": [
+        "16",
+        "18",
+        "20",
+        "22",
+        "24",
+        "26",
+        "28",
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "sizePrices": {
+        "16": 2500,
+        "18": 2500,
+        "20": 2500,
+        "22": 2500,
+        "24": 2500,
+        "26": 3500,
+        "28": 3500,
+        "30": 3500,
+        "32": 3500,
+        "34": 3500,
+        "36": 3500
+      },
+      "fabric": "Embroidered Cotton Silk with Mirror Work",
+      "description": "A vibrant peacock blue kurta with hand-placed mirror work and floral thread motifs running down the placket and scattered across the body. The Mandarin collar and straight cut give it a clean, traditional silhouette that's perfect for festive occasions and family celebrations.",
+      "care": "Dry clean recommended to protect the mirror work and embroidery. If hand washing, use cold water only and avoid wringing. Do not bleach. Iron on low heat, avoiding direct contact with the embroidery, and hang to dry in shade.",
+      "images": [
+        "./product/pro2-1.jpeg",
+        "./product/pro2-2.jpeg"
+      ]
+    },
+    {
+      "id": "kk-003",
+      "name": "Rust Booti Print Kurta",
+      "category": "kids",
+      "price": 2500,
+      "salePrice": null,
+      "isNew": false,
+      "rating": 4.3,
+      "reviews": 9,
+      "colors": [
+        "Rust"
+      ],
+      "colorImages": {
+        "Rust": [
+          "./product/pro3-1.jpeg",
+          "./product/pro3-2.jpeg"
+        ]
+      },
+      "sizes": [
+        "16",
+        "18",
+        "20",
+        "22",
+        "24",
+        "26",
+        "28",
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "sizePrices": {
+        "16": 2500,
+        "18": 2500,
+        "20": 2500,
+        "22": 2500,
+        "24": 2500,
+        "26": 3500,
+        "28": 3500,
+        "30": 3500,
+        "32": 3500,
+        "34": 3500,
+        "36": 3500
+      },
+      "fabric": "Cotton",
+      "description": "An easy rust-orange kurta scattered with a small green-and-cream booti print, finished with a Mandarin collar and classic button placket. Lightweight and breathable, it's built for everyday wear as much as festive outings.",
+      "care": "Gentle hand wash or machine wash on delicate cycle. Wash with similar colors and use a mild detergent only. Do not bleach. Iron on low heat and hang to dry in shade.",
+      "images": [
+        "./product/pro3-1.jpeg",
+        "./product/pro3-2.jpeg"
+      ]
+    },
+    {
+      "id": "kk-004",
+      "name": "Maroon Sequin Embroidered Kurta",
+      "category": "kids",
+      "price": 2500,
+      "salePrice": null,
+      "isNew": true,
+      "rating": 4.7,
+      "reviews": 21,
+      "colors": [
+        "Maroon"
+      ],
+      "colorImages": {
+        "Maroon": [
+          "./product/pro4-1.jpeg",
+          "./product/pro4-2.jpeg"
+        ]
+      },
+      "sizes": [
+        "16",
+        "18",
+        "20",
+        "22",
+        "24",
+        "26",
+        "28",
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "sizePrices": {
+        "16": 2500,
+        "18": 2500,
+        "20": 2500,
+        "22": 2500,
+        "24": 2500,
+        "26": 3500,
+        "28": 3500,
+        "30": 3500,
+        "32": 3500,
+        "34": 3500,
+        "36": 3500
+      },
+      "fabric": "Embroidered Cotton",
+      "description": "A deep maroon kurta covered in fine floral thread embroidery with a subtle scatter of sequins for a soft festive shimmer. The Mandarin collar carries a small embroidered emblem, and fabric-covered buttons complete the traditional look.",
+      "care": "Dry clean recommended to protect the embroidery and sequins. If hand washing, use cold water only and avoid wringing. Do not bleach. Iron on low heat, avoiding direct contact with the embroidery, and hang to dry in shade.",
+      "images": [
+        "./product/pro4-1.jpeg",
+        "./product/pro4-2.jpeg"
+      ]
+    },
+    {
+      "id": "kk-005",
+      "name": "Powder Blue Sequin Embroidered Kurta",
+      "category": "kids",
+      "price": 2500,
+      "salePrice": null,
+      "isNew": false,
+      "rating": 4.5,
+      "reviews": 14,
+      "colors": [
+        "Powder Blue"
+      ],
+      "colorImages": {
+        "Powder Blue": [
+          "./product/pro5-1.jpeg",
+          "./product/pro5-2.jpeg"
+        ]
+      },
+      "sizes": [
+        "16",
+        "18",
+        "20",
+        "22",
+        "24",
+        "26",
+        "28",
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "sizePrices": {
+        "16": 2500,
+        "18": 2500,
+        "20": 2500,
+        "22": 2500,
+        "24": 2500,
+        "26": 3500,
+        "28": 3500,
+        "30": 3500,
+        "32": 3500,
+        "34": 3500,
+        "36": 3500
+      },
+      "fabric": "Embroidered Cotton",
+      "description": "A soft powder blue kurta with all-over silver sequin and thread embroidery in a delicate floral jaal. The Mandarin collar and fabric buttons keep the finish traditional, making this a gentle, festive choice for Eid and family functions.",
+      "care": "Dry clean recommended to protect the sequin work. If hand washing, use cold water only and avoid wringing. Do not bleach. Iron on low heat, avoiding direct contact with the embroidery, and hang to dry in shade.",
+      "images": [
+        "./product/pro5-1.jpeg",
+        "./product/pro5-2.jpeg"
+      ]
+    },
+    {
+      "id": "kk-006",
+      "name": "Parrot Green Zari Booti Kurta",
+      "category": "kids",
+      "price": 2500,
+      "salePrice": null,
+      "isNew": true,
+      "rating": 4.4,
+      "reviews": 11,
+      "colors": [
+        "Parrot Green"
+      ],
+      "colorImages": {
+        "Parrot Green": [
+          "./product/pro6-1.jpeg",
+          "./product/pro6-2.jpeg"
+        ]
+      },
+      "sizes": [
+        "16",
+        "18",
+        "20",
+        "22",
+        "24",
+        "26",
+        "28",
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "sizePrices": {
+        "16": 2500,
+        "18": 2500,
+        "20": 2500,
+        "22": 2500,
+        "24": 2500,
+        "26": 3500,
+        "28": 3500,
+        "30": 3500,
+        "32": 3500,
+        "34": 3500,
+        "36": 3500
+      },
+      "fabric": "Silk Blend Jacquard",
+      "description": "A bright parrot green kurta woven with a neat golden zari booti (motif) pattern for a subtle festive sheen. Cut with a Mandarin collar and full sleeves, it pairs easily with a plain or churidar shalwar for Eid, weddings, or any celebration.",
+      "care": "Dry clean recommended to preserve the fabric's sheen. If hand washing, use cold water only and avoid wringing. Do not bleach. Iron on low heat and hang to dry in shade.",
+      "images": [
+        "./product/pro6-1.jpeg",
+        "./product/pro6-2.jpeg"
+      ]
+    },
+    {
+      "id": "kk-007",
+      "name": "Black Striped Leaf Print Kurta",
+      "category": "kids",
+      "price": 2500,
+      "salePrice": null,
+      "isNew": false,
+      "rating": 4.2,
+      "reviews": 6,
+      "colors": [
+        "Black"
+      ],
+      "colorImages": {
+        "Black": [
+          "./product/pro7-1.jpeg",
+          "./product/pro7-2.jpeg"
+        ]
+      },
+      "sizes": [
+        "16",
+        "18",
+        "20",
+        "22",
+        "24",
+        "26",
+        "28",
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "sizePrices": {
+        "16": 2500,
+        "18": 2500,
+        "20": 2500,
+        "22": 2500,
+        "24": 2500,
+        "26": 3500,
+        "28": 3500,
+        "30": 3500,
+        "32": 3500,
+        "34": 3500,
+        "36": 3500
+      },
+      "fabric": "Cotton",
+      "description": "A black kurta printed with a fine striped leaf motif and dotted booti detailing for a smart, understated look. The Mandarin collar and fabric-covered buttons keep it traditional, while the breathable cotton makes it comfortable for everyday and festive wear alike.",
+      "care": "Gentle hand wash or machine wash on delicate cycle. Wash with similar colors and use a mild detergent only. Do not bleach. Iron on low heat and hang to dry in shade.",
+      "images": [
+        "./product/pro7-1.jpeg",
+        "./product/pro7-2.jpeg"
+      ]
+    },
+    {
+      "id": "kk-016",
+      "name": "Olive Striped Leaf Print Kurta",
+      "category": "kids",
+      "price": 2500,
+      "salePrice": null,
+      "isNew": false,
+      "rating": 4.3,
+      "reviews": 7,
+      "colors": [
+        "Olive"
+      ],
+      "colorImages": {
+        "Olive": [
+          "./product/pro14-1.jpeg",
+          "./product/pro14-2.jpeg"
+        ]
+      },
+      "sizes": [
+        "16",
+        "18",
+        "20",
+        "22",
+        "24",
+        "26",
+        "28",
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "sizePrices": {
+        "16": 2500,
+        "18": 2500,
+        "20": 2500,
+        "22": 2500,
+        "24": 2500,
+        "26": 3500,
+        "28": 3500,
+        "30": 3500,
+        "32": 3500,
+        "34": 3500,
+        "36": 3500
+      },
+      "fabric": "Cotton",
+      "description": "An olive-green kurta printed with the same fine striped leaf motif, finished with a contrast black collar trim and fabric buttons. Relaxed and breathable, it's an easy everyday pick that still looks put-together for outings.",
+      "care": "Gentle hand wash or machine wash on delicate cycle. Wash with similar colors and use a mild detergent only. Do not bleach. Iron on low heat and hang to dry in shade.",
+      "images": [
+        "./product/pro14-1.jpeg",
+        "./product/pro14-2.jpeg"
+      ]
+    },
+    {
+      "id": "kk-017",
+      "name": "Navy Striped Leaf Print Kurta",
+      "category": "kids",
+      "price": 2500,
+      "salePrice": null,
+      "isNew": true,
+      "rating": 4.5,
+      "reviews": 9,
+      "colors": [
+        "Navy"
+      ],
+      "colorImages": {
+        "Navy": [
+          "./product/pro16-1.jpeg",
+          "./product/pro16-2.jpeg"
+        ]
+      },
+      "sizes": [
+        "16",
+        "18",
+        "20",
+        "22",
+        "24",
+        "26",
+        "28",
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "sizePrices": {
+        "16": 2500,
+        "18": 2500,
+        "20": 2500,
+        "22": 2500,
+        "24": 2500,
+        "26": 3500,
+        "28": 3500,
+        "30": 3500,
+        "32": 3500,
+        "34": 3500,
+        "36": 3500
+      },
+      "fabric": "Cotton",
+      "description": "A navy kurta printed with a fine striped leaf motif and dotted booti detailing in a warm gold tone. The Mandarin collar and fabric-covered buttons keep it traditional, while the breathable cotton makes it comfortable for everyday and festive wear alike.",
+      "care": "Gentle hand wash or machine wash on delicate cycle. Wash with similar colors and use a mild detergent only. Do not bleach. Iron on low heat and hang to dry in shade.",
+      "images": [
+        "./product/pro16-1.jpeg",
+        "./product/pro16-2.jpeg"
+      ]
+    },
+    {
+      "id": "kk-018",
+      "name": "Teal Striped Leaf Print Kurta",
+      "category": "kids",
+      "price": 2500,
+      "salePrice": null,
+      "isNew": true,
+      "rating": 4.4,
+      "reviews": 8,
+      "colors": [
+        "Teal"
+      ],
+      "colorImages": {
+        "Teal": [
+          "./product/pro17-1.jpeg",
+          "./product/pro17-2.jpeg"
+        ]
+      },
+      "sizes": [
+        "16",
+        "18",
+        "20",
+        "22",
+        "24",
+        "26",
+        "28",
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "sizePrices": {
+        "16": 2500,
+        "18": 2500,
+        "20": 2500,
+        "22": 2500,
+        "24": 2500,
+        "26": 3500,
+        "28": 3500,
+        "30": 3500,
+        "32": 3500,
+        "34": 3500,
+        "36": 3500
+      },
+      "fabric": "Cotton",
+      "description": "A deep teal kurta printed with a fine striped leaf motif and dotted booti detailing in a warm gold tone. The Mandarin collar and fabric-covered buttons keep it traditional, while the breathable cotton makes it comfortable for everyday and festive wear alike.",
+      "care": "Gentle hand wash or machine wash on delicate cycle. Wash with similar colors and use a mild detergent only. Do not bleach. Iron on low heat and hang to dry in shade.",
+      "images": [
+        "./product/pro17-1.jpeg",
+        "./product/pro17-2.jpeg"
+      ]
+    },
+    {
+      "id": "kk-008",
+      "name": "Wine Zari Booti Kurta",
+      "category": "kids",
+      "price": 2500,
+      "salePrice": null,
+      "isNew": false,
+      "rating": 4.6,
+      "reviews": 16,
+      "colors": [
+        "Purple"
+      ],
+      "colorImages": {
+        "Purple": [
+          "./product/pro8-1.jpeg",
+          "./product/pro8-2.jpeg"
+        ]
+      },
+      "sizes": [
+        "16",
+        "18",
+        "20",
+        "22",
+        "24",
+        "26",
+        "28",
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "sizePrices": {
+        "16": 2500,
+        "18": 2500,
+        "20": 2500,
+        "22": 2500,
+        "24": 2500,
+        "26": 3500,
+        "28": 3500,
+        "30": 3500,
+        "32": 3500,
+        "34": 3500,
+        "36": 3500
+      },
+      "fabric": "Silk Blend Jacquard",
+      "description": "A rich wine-purple kurta woven with a scattered golden zari booti (motif) pattern for a subtle sheen. Finished with a Mandarin collar and golden buttons, it's a versatile festive pick that pairs well with both shalwar and churidar.",
+      "care": "Dry clean recommended to preserve the fabric's sheen. If hand washing, use cold water only and avoid wringing. Do not bleach. Iron on low heat and hang to dry in shade.",
+      "images": [
+        "./product/pro8-1.jpeg",
+        "./product/pro8-2.jpeg"
+      ]
+    },
+    {
+      "id": "kk-009",
+      "name": "Sage Green Sequin Embroidered Kurta",
+      "category": "kids",
+      "price": 2500,
+      "salePrice": null,
+      "isNew": true,
+      "rating": 4.9,
+      "reviews": 33,
+      "colors": [
+        "Sage Green"
+      ],
+      "colorImages": {
+        "Sage Green": [
+          "./product/pro9-1.jpeg",
+          "./product/pro9-2.jpeg"
+        ]
+      },
+      "sizes": [
+        "16",
+        "18",
+        "20",
+        "22",
+        "24",
+        "26",
+        "28",
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "sizePrices": {
+        "16": 2500,
+        "18": 2500,
+        "20": 2500,
+        "22": 2500,
+        "24": 2500,
+        "26": 3500,
+        "28": 3500,
+        "30": 3500,
+        "32": 3500,
+        "34": 3500,
+        "36": 3500
+      },
+      "fabric": "Embroidered Chiffon",
+      "description": "A sage green kurta with dense golden paisley and floral embroidery finished with fine sequin work, covering the body edge to edge. The heavily embroidered Mandarin collar and fabric buttons make this the pick for weddings and big-occasion dressing.",
+      "care": "Dry clean only — recommended to protect the dense embroidery and sequin work. Iron on low heat from the reverse side, avoiding direct contact with the embroidery. Store folded flat away from direct sunlight.",
+      "images": [
+        "./product/pro9-1.jpeg",
+        "./product/pro9-2.jpeg"
+      ]
+    },
+    {
+      "id": "kk-010",
+      "name": "Aqua Embroidered Panel Kurta",
+      "category": "kids",
+      "price": 2500,
+      "salePrice": null,
+      "isNew": false,
+      "rating": 4.5,
+      "reviews": 12,
+      "colors": [
+        "Aqua"
+      ],
+      "colorImages": {
+        "Aqua": [
+          "./product/pro10-1.jpeg",
+          "./product/pro10-2.jpeg"
+        ]
+      },
+      "sizes": [
+        "16",
+        "18",
+        "20",
+        "22",
+        "24",
+        "26",
+        "28",
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "sizePrices": {
+        "16": 2500,
+        "18": 2500,
+        "20": 2500,
+        "22": 2500,
+        "24": 2500,
+        "26": 3500,
+        "28": 3500,
+        "30": 3500,
+        "32": 3500,
+        "34": 3500,
+        "36": 3500
+      },
+      "fabric": "Embroidered Cotton",
+      "description": "An aqua kurta with tonal floral embroidery running in vertical panels down the front and along the cuffs, finished with a matching embroidered Mandarin collar. A lighter take on festive embroidery that still stands out for Eid and family events.",
+      "care": "Dry clean recommended to protect the embroidery. If hand washing, use cold water only and avoid wringing. Do not bleach. Iron on low heat, avoiding direct contact with the embroidery, and hang to dry in shade.",
+      "images": [
+        "./product/pro10-1.jpeg",
+        "./product/pro10-2.jpeg"
+      ]
+    },
+    {
+      "id": "kk-011",
+      "name": "Navy Sequin Embroidered Kurta",
+      "category": "kids",
+      "price": 2500,
+      "salePrice": null,
+      "isNew": true,
+      "rating": 4.7,
+      "reviews": 19,
+      "colors": [
+        "Navy"
+      ],
+      "colorImages": {
+        "Navy": [
+          "./product/pro11-1.jpeg",
+          "./product/pro11-2.jpeg"
+        ]
+      },
+      "sizes": [
+        "16",
+        "18",
+        "20",
+        "22",
+        "24",
+        "26",
+        "28",
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "sizePrices": {
+        "16": 2500,
+        "18": 2500,
+        "20": 2500,
+        "22": 2500,
+        "24": 2500,
+        "26": 3500,
+        "28": 3500,
+        "30": 3500,
+        "32": 3500,
+        "34": 3500,
+        "36": 3500
+      },
+      "fabric": "Embroidered Cotton",
+      "description": "A navy blue kurta covered in fine floral thread and sequin embroidery, with a sheer net inset at the collar for a delicate finishing touch. Fabric-covered buttons and a classic straight cut make it a dependable festive staple.",
+      "care": "Dry clean recommended to protect the embroidery, sequins, and net inset. If hand washing, use cold water only and avoid wringing. Do not bleach. Iron on low heat, avoiding direct contact with the embroidery, and hang to dry in shade.",
+      "images": [
+        "./product/pro11-1.jpeg",
+        "./product/pro11-2.jpeg"
+      ]
+    },
+    {
+      "id": "kk-012",
+      "name": "Royal Blue Zari Booti Kurta",
+      "category": "kids",
+      "price": 2500,
+      "salePrice": null,
+      "isNew": false,
+      "rating": 4.4,
+      "reviews": 8,
+      "colors": [
+        "Royal Blue"
+      ],
+      "colorImages": {
+        "Royal Blue": [
+          "./product/pro12-1.jpeg",
+          "./product/pro12-2.jpeg"
+        ]
+      },
+      "sizes": [
+        "16",
+        "18",
+        "20",
+        "22",
+        "24",
+        "26",
+        "28",
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "sizePrices": {
+        "16": 2500,
+        "18": 2500,
+        "20": 2500,
+        "22": 2500,
+        "24": 2500,
+        "26": 3500,
+        "28": 3500,
+        "30": 3500,
+        "32": 3500,
+        "34": 3500,
+        "36": 3500
+      },
+      "fabric": "Silk Blend Jacquard",
+      "description": "A royal blue kurta with a scattered golden diamond zari booti weave for a subtle festive shine. A simple button placket and Mandarin collar keep the styling clean and easy to dress up or down.",
+      "care": "Dry clean recommended to preserve the fabric's sheen. If hand washing, use cold water only and avoid wringing. Do not bleach. Iron on low heat and hang to dry in shade.",
+      "images": [
+        "./product/pro12-1.jpeg",
+        "./product/pro12-2.jpeg"
+      ]
+    },
+    {
+      "id": "kk-014",
+      "name": "Ivory Sequin Embroidered Sherwani",
+      "category": "kids",
+      "price": 2500,
+      "salePrice": null,
+      "isNew": true,
+      "rating": 5,
+      "reviews": 4,
+      "colors": [
+        "Ivory"
+      ],
+      "colorImages": {
+        "Ivory": [
+          "./product/pro13-1.jpeg",
+          "./product/pro13-2.jpeg"
+        ]
+      },
+      "sizes": [
+        "16",
+        "18",
+        "20",
+        "22",
+        "24",
+        "26",
+        "28",
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "sizePrices": {
+        "16": 2500,
+        "18": 2500,
+        "20": 2500,
+        "22": 2500,
+        "24": 2500,
+        "26": 3500,
+        "28": 3500,
+        "30": 3500,
+        "32": 3500,
+        "34": 3500,
+        "36": 3500
+      },
+      "fabric": "Embroidered Jacquard",
+      "description": "An ivory sherwani jacket with dense sequin and thread embroidery in a scalloped motif, finished with a Mandarin collar, brooch-style button closures, and a mock pocket square. Structured and formal, it's designed for weddings, Eid, and the biggest occasions on the calendar.",
+      "care": "Dry clean only. Store on a padded hanger or folded flat away from direct sunlight. Avoid contact with perfume or water, as this may mark the embroidery.",
+      "images": [
+        "./product/pro13-1.jpeg",
+        "./product/pro13-2.jpeg"
+      ]
+    },
+    {
+      "id": "kk-015",
+      "name": "Pistachio Self-Striped Kurta",
+      "category": "kids",
+      "price": 2500,
+      "salePrice": null,
+      "isNew": true,
+      "rating": 4.5,
+      "reviews": 5,
+      "colors": [
+        "Pistachio"
+      ],
+      "colorImages": {
+        "Pistachio": [
+          "./product/pro15-1.jpeg",
+          "./product/pro15-2.jpeg"
+        ]
+      },
+      "sizes": [
+        "16",
+        "18",
+        "20",
+        "22",
+        "24",
+        "26",
+        "28",
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "sizePrices": {
+        "16": 2500,
+        "18": 2500,
+        "20": 2500,
+        "22": 2500,
+        "24": 2500,
+        "26": 3500,
+        "28": 3500,
+        "30": 3500,
+        "32": 3500,
+        "34": 3500,
+        "36": 3500
+      },
+      "fabric": "Self-Textured Cotton",
+      "description": "A soft pistachio-green kurta in a subtle self-striped weave, finished with a Mandarin collar and matching fabric buttons. Minimal and versatile, it's an easy everyday pick that layers well under a waistcoat for slightly dressier occasions.",
+      "care": "Gentle hand wash or machine wash on delicate cycle. Wash with similar colors and use a mild detergent only. Do not bleach. Iron on low heat and hang to dry in shade.",
+      "images": [
+        "./product/pro15-1.jpeg",
+        "./product/pro15-2.jpeg"
+      ]
+    }
+  ]
+}
