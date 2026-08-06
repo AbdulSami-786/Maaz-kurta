@@ -18,8 +18,7 @@ const staticUrls = [
   { path: "/", priority: "1.0", changefreq: "daily" },
   { path: "/kids-kurta", priority: "0.9", changefreq: "daily" },
   { path: "/sherwani", priority: "0.9", changefreq: "weekly" },
-  { path: "/new-arrivals", priority: "0.8", changefreq: "daily" },
-  { path: "/sale", priority: "0.8", changefreq: "daily" },
+  { path: "/festive-kurta", priority: "0.9", changefreq: "daily" },
   { path: "/about-us", priority: "0.5", changefreq: "monthly" },
   { path: "/faq", priority: "0.5", changefreq: "monthly" },
 ];

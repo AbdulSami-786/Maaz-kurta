@@ -1,20 +1,20 @@
 {
   "slides": [
     {
-      "tag": "New Arrivals 2026",
+      "tag": "Festive Collection 2026",
       "title": "The Kids' Kurta\nCollection",
       "desc": "Crafted, customized, and effortless. Traditional elegance for every occasion.",
       "ctaText": "Shop Kids' Kurtas",
       "ctaCategory": "kids",
-      "imgSrc": "./product/pro9-1.jpeg"
+      "imgSrc": "/product/pro9-1.jpeg"
     },
     {
-      "tag": "Eid & Wedding Edit",
+      "tag": "Shadi & Baraat Edit",
       "title": "Festive Looks\nFor Little Ones",
       "desc": "Embroidery, mirror work, and zari booti weaves — dressed up for the biggest days.",
-      "ctaText": "Shop New Arrivals",
+      "ctaText": "Shop Festive Kurta",
       "ctaCategory": "kids",
-      "imgSrc": "./product/pro11-1.jpeg"
+      "imgSrc": "/product/pro11-1.jpeg"
     },
     {
       "tag": "Everyday Essentials",
@@ -22,7 +22,7 @@
       "desc": "Soft cotton kurtas that are easy to wear and even easier to move in.",
       "ctaText": "View All",
       "ctaCategory": "kids",
-      "imgSrc": "./product/pro3-1.jpeg"
+      "imgSrc": "/product/pro3-1.jpeg"
     }
   ],
   "categories": [
@@ -52,14 +52,14 @@
   "banners": [
     {
       "id": 1,
-      "discount": "New Arrivals",
-      "title": "Fresh In",
-      "subtitle": "This week's new kurtas",
-      "image": "./product/pro11-1.jpeg",
+      "discount": "Festive Kurta",
+      "title": "Shadi & Baraat Edit",
+      "subtitle": "Festive wearing kurtas for the big day",
+      "image": "/product/pro11-1.jpeg",
       "link": {
         "name": "search",
         "params": {
-          "query": "new"
+          "query": "festive"
         }
       }
     },
@@ -68,7 +68,7 @@
       "discount": "Occasion Wear",
       "title": "Wedding & Sherwani",
       "subtitle": "Dressed up for the big day",
-      "image": "./product/pro13-1.jpeg",
+      "image": "/product/pro13-1.jpeg",
       "link": {
         "name": "search",
         "params": {
@@ -81,7 +81,7 @@
       "discount": "Everyday Essentials",
       "title": "Easy Cotton Kurtas",
       "subtitle": "Soft, breathable, easy to wear",
-      "image": "./product/pro3-1.jpeg",
+      "image": "/product/pro3-1.jpeg",
       "link": {
         "name": "search",
         "params": {
@@ -93,28 +93,28 @@
   "shopTheLook": {
     "bundleTag": "Bundle & Save",
     "title": "Shop the Look",
-    "featureImage": "./product/pro13-1.jpeg",
+    "featureImage": "/product/pro13-1.jpeg",
     "items": [
       {
         "id": "item-01",
         "category": "Sherwani",
         "title": "Ivory Sequin Embroidered Sherwani",
         "price": 2500,
-        "image": "./product/pro13-1.jpeg"
+        "image": "/product/pro13-1.jpeg"
       },
       {
         "id": "item-02",
         "category": "Kurta",
         "title": "Sage Green Sequin Embroidered Kurta",
         "price": 2500,
-        "image": "./product/pro9-1.jpeg"
+        "image": "/product/pro9-1.jpeg"
       },
       {
         "id": "item-03",
         "category": "Kurta",
         "title": "Navy Sequin Embroidered Kurta",
         "price": 2500,
-        "image": "./product/pro11-1.jpeg"
+        "image": "/product/pro11-1.jpeg"
       }
     ]
   },
@@ -123,37 +123,37 @@
       "id": 1,
       "title": "Wedding & Sherwani Edit",
       "query": "sherwani",
-      "img": "./product/pro13-1.jpeg"
+      "img": "/product/pro13-1.jpeg"
     },
     {
       "id": 2,
       "title": "Sequin & Mirror Work",
       "query": "sequin",
-      "img": "./product/pro9-1.jpeg"
+      "img": "/product/pro9-1.jpeg"
     },
     {
       "id": 3,
       "title": "Festive Luxe",
       "query": "embroidered",
-      "img": "./product/pro2-1.jpeg"
+      "img": "/product/pro2-1.jpeg"
     },
     {
       "id": 4,
       "title": "Everyday Cotton",
       "query": "cotton",
-      "img": "./product/pro3-1.jpeg"
+      "img": "/product/pro3-1.jpeg"
     },
     {
       "id": 5,
-      "title": "New Arrivals",
-      "query": "new",
-      "img": "./product/pro11-1.jpeg"
+      "title": "Festive Kurta",
+      "query": "festive",
+      "img": "/product/pro11-1.jpeg"
     },
     {
       "id": 6,
       "title": "Zari Booti Weaves",
       "query": "zari",
-      "img": "./product/pro6-1.jpeg"
+      "img": "/product/pro6-1.jpeg"
     }
   ],
   "testimonials": [
@@ -219,8 +219,8 @@
       ],
       "colorImages": {
         "Mustard": [
-          "./product/pro1-1.jpeg",
-          "./product/pro1-2.jpeg"
+          "/product/pro1-1.jpeg",
+          "/product/pro1-2.jpeg"
         ]
       },
       "sizes": [
@@ -250,11 +250,11 @@
         "36": 3500
       },
       "fabric": "Embroidered Cotton",
-      "description": "A rich mustard kurta with dense floral thread embroidery running edge to edge, finished with a Mandarin collar and fabric-covered buttons. The soft cotton base and full sleeves make it easy to wear for a full day of festivities, from Eid mornings to family gatherings.",
+      "description": "A rich mustard kurta with dense floral thread embroidery running edge to edge, finished with a Mandarin collar and fabric-covered buttons. The soft cotton base and full sleeves make it a lovely festive wearing kurta for shadi, baraat, and family gatherings.",
       "care": "Gentle hand wash or machine wash on delicate cycle. Wash with similar colors and use a mild detergent only. Do not bleach. Iron on low heat from the reverse side and hang to dry in shade.",
       "images": [
-        "./product/pro1-1.jpeg",
-        "./product/pro1-2.jpeg"
+        "/product/pro1-1.jpeg",
+        "/product/pro1-2.jpeg"
       ]
     },
     {
@@ -271,8 +271,8 @@
       ],
       "colorImages": {
         "Peacock Blue": [
-          "./product/pro2-1.jpeg",
-          "./product/pro2-2.jpeg"
+          "/product/pro2-1.jpeg",
+          "/product/pro2-2.jpeg"
         ]
       },
       "sizes": [
@@ -302,11 +302,11 @@
         "36": 3500
       },
       "fabric": "Embroidered Cotton Silk with Mirror Work",
-      "description": "A vibrant peacock blue kurta with hand-placed mirror work and floral thread motifs running down the placket and scattered across the body. The Mandarin collar and straight cut give it a clean, traditional silhouette that's perfect for festive occasions and family celebrations.",
+      "description": "A vibrant peacock blue kurta with hand-placed mirror work and floral thread motifs running down the placket and scattered across the body. The Mandarin collar and straight cut give it a clean, traditional silhouette — a festive wearing kurta that's perfect for shadi, baraat, and family celebrations.",
       "care": "Dry clean recommended to protect the mirror work and embroidery. If hand washing, use cold water only and avoid wringing. Do not bleach. Iron on low heat, avoiding direct contact with the embroidery, and hang to dry in shade.",
       "images": [
-        "./product/pro2-1.jpeg",
-        "./product/pro2-2.jpeg"
+        "/product/pro2-1.jpeg",
+        "/product/pro2-2.jpeg"
       ]
     },
     {
@@ -323,8 +323,8 @@
       ],
       "colorImages": {
         "Rust": [
-          "./product/pro3-1.jpeg",
-          "./product/pro3-2.jpeg"
+          "/product/pro3-1.jpeg",
+          "/product/pro3-2.jpeg"
         ]
       },
       "sizes": [
@@ -354,11 +354,11 @@
         "36": 3500
       },
       "fabric": "Cotton",
-      "description": "An easy rust-orange kurta scattered with a small green-and-cream booti print, finished with a Mandarin collar and classic button placket. Lightweight and breathable, it's built for everyday wear as much as festive outings.",
+      "description": "An easy rust-orange kurta scattered with a small green-and-cream booti print, finished with a Mandarin collar and classic button placket. Lightweight and breathable, it works as an everyday kurta and as a festive wearing kurta for smaller shadi and baraat outings.",
       "care": "Gentle hand wash or machine wash on delicate cycle. Wash with similar colors and use a mild detergent only. Do not bleach. Iron on low heat and hang to dry in shade.",
       "images": [
-        "./product/pro3-1.jpeg",
-        "./product/pro3-2.jpeg"
+        "/product/pro3-1.jpeg",
+        "/product/pro3-2.jpeg"
       ]
     },
     {
@@ -375,8 +375,8 @@
       ],
       "colorImages": {
         "Maroon": [
-          "./product/pro4-1.jpeg",
-          "./product/pro4-2.jpeg"
+          "/product/pro4-1.jpeg",
+          "/product/pro4-2.jpeg"
         ]
       },
       "sizes": [
@@ -406,11 +406,11 @@
         "36": 3500
       },
       "fabric": "Embroidered Cotton",
-      "description": "A deep maroon kurta covered in fine floral thread embroidery with a subtle scatter of sequins for a soft festive shimmer. The Mandarin collar carries a small embroidered emblem, and fabric-covered buttons complete the traditional look.",
+      "description": "A deep maroon kurta covered in fine floral thread embroidery with a subtle scatter of sequins for a soft festive shimmer. The Mandarin collar carries a small embroidered emblem, and fabric-covered buttons complete the traditional look — a festive wearing kurta built for shadi and baraat celebrations.",
       "care": "Dry clean recommended to protect the embroidery and sequins. If hand washing, use cold water only and avoid wringing. Do not bleach. Iron on low heat, avoiding direct contact with the embroidery, and hang to dry in shade.",
       "images": [
-        "./product/pro4-1.jpeg",
-        "./product/pro4-2.jpeg"
+        "/product/pro4-1.jpeg",
+        "/product/pro4-2.jpeg"
       ]
     },
     {
@@ -427,8 +427,8 @@
       ],
       "colorImages": {
         "Powder Blue": [
-          "./product/pro5-1.jpeg",
-          "./product/pro5-2.jpeg"
+          "/product/pro5-1.jpeg",
+          "/product/pro5-2.jpeg"
         ]
       },
       "sizes": [
@@ -458,11 +458,11 @@
         "36": 3500
       },
       "fabric": "Embroidered Cotton",
-      "description": "A soft powder blue kurta with all-over silver sequin and thread embroidery in a delicate floral jaal. The Mandarin collar and fabric buttons keep the finish traditional, making this a gentle, festive choice for Eid and family functions.",
+      "description": "A soft powder blue kurta with all-over silver sequin and thread embroidery in a delicate floral jaal. The Mandarin collar and fabric buttons keep the finish traditional, making this a gentle festive wearing kurta for shadi, baraat, and family functions.",
       "care": "Dry clean recommended to protect the sequin work. If hand washing, use cold water only and avoid wringing. Do not bleach. Iron on low heat, avoiding direct contact with the embroidery, and hang to dry in shade.",
       "images": [
-        "./product/pro5-1.jpeg",
-        "./product/pro5-2.jpeg"
+        "/product/pro5-1.jpeg",
+        "/product/pro5-2.jpeg"
       ]
     },
     {
@@ -479,8 +479,8 @@
       ],
       "colorImages": {
         "Parrot Green": [
-          "./product/pro6-1.jpeg",
-          "./product/pro6-2.jpeg"
+          "/product/pro6-1.jpeg",
+          "/product/pro6-2.jpeg"
         ]
       },
       "sizes": [
@@ -510,11 +510,11 @@
         "36": 3500
       },
       "fabric": "Silk Blend Jacquard",
-      "description": "A bright parrot green kurta woven with a neat golden zari booti (motif) pattern for a subtle festive sheen. Cut with a Mandarin collar and full sleeves, it pairs easily with a plain or churidar shalwar for Eid, weddings, or any celebration.",
+      "description": "A bright parrot green kurta woven with a neat golden zari booti (motif) pattern for a subtle festive sheen. Cut with a Mandarin collar and full sleeves, it pairs easily with a plain or churidar shalwar as a festive wearing kurta for shadi, baraat, weddings, or any celebration.",
       "care": "Dry clean recommended to preserve the fabric's sheen. If hand washing, use cold water only and avoid wringing. Do not bleach. Iron on low heat and hang to dry in shade.",
       "images": [
-        "./product/pro6-1.jpeg",
-        "./product/pro6-2.jpeg"
+        "/product/pro6-1.jpeg",
+        "/product/pro6-2.jpeg"
       ]
     },
     {
@@ -531,8 +531,8 @@
       ],
       "colorImages": {
         "Black": [
-          "./product/pro7-1.jpeg",
-          "./product/pro7-2.jpeg"
+          "/product/pro7-1.jpeg",
+          "/product/pro7-2.jpeg"
         ]
       },
       "sizes": [
@@ -562,11 +562,11 @@
         "36": 3500
       },
       "fabric": "Cotton",
-      "description": "A black kurta printed with a fine striped leaf motif and dotted booti detailing for a smart, understated look. The Mandarin collar and fabric-covered buttons keep it traditional, while the breathable cotton makes it comfortable for everyday and festive wear alike.",
+      "description": "A black kurta printed with a fine striped leaf motif and dotted booti detailing for a smart, understated look. The Mandarin collar and fabric-covered buttons keep it traditional, while the breathable cotton makes it a comfortable everyday piece and a festive wearing kurta for shadi and baraat alike.",
       "care": "Gentle hand wash or machine wash on delicate cycle. Wash with similar colors and use a mild detergent only. Do not bleach. Iron on low heat and hang to dry in shade.",
       "images": [
-        "./product/pro7-1.jpeg",
-        "./product/pro7-2.jpeg"
+        "/product/pro7-1.jpeg",
+        "/product/pro7-2.jpeg"
       ]
     },
     {
@@ -583,8 +583,8 @@
       ],
       "colorImages": {
         "Olive": [
-          "./product/pro14-1.jpeg",
-          "./product/pro14-2.jpeg"
+          "/product/pro14-1.jpeg",
+          "/product/pro14-2.jpeg"
         ]
       },
       "sizes": [
@@ -614,11 +614,11 @@
         "36": 3500
       },
       "fabric": "Cotton",
-      "description": "An olive-green kurta printed with the same fine striped leaf motif, finished with a contrast black collar trim and fabric buttons. Relaxed and breathable, it's an easy everyday pick that still looks put-together for outings.",
+      "description": "An olive-green kurta printed with the same fine striped leaf motif, finished with a contrast black collar trim and fabric buttons. Relaxed and breathable, it's an easy everyday pick that also works as a festive wearing kurta for smaller shadi and baraat outings.",
       "care": "Gentle hand wash or machine wash on delicate cycle. Wash with similar colors and use a mild detergent only. Do not bleach. Iron on low heat and hang to dry in shade.",
       "images": [
-        "./product/pro14-1.jpeg",
-        "./product/pro14-2.jpeg"
+        "/product/pro14-1.jpeg",
+        "/product/pro14-2.jpeg"
       ]
     },
     {
@@ -635,8 +635,8 @@
       ],
       "colorImages": {
         "BLACK": [
-          "./product/pro16-1.jpeg",
-          "./product/pro16-2.jpeg"
+          "/product/pro16-1.jpeg",
+          "/product/pro16-2.jpeg"
         ]
       },
       "sizes": [
@@ -666,11 +666,11 @@
         "36": 3500
       },
       "fabric": "Cotton",
-      "description": "A black kurta printed with a fine striped leaf motif and dotted booti detailing in a warm gold tone. The Mandarin collar and fabric-covered buttons keep it traditional, while the breathable cotton makes it comfortable for everyday and festive wear alike.",
+      "description": "A black kurta printed with a fine striped leaf motif and dotted booti detailing in a warm gold tone. The Mandarin collar and fabric-covered buttons keep it traditional, while the breathable cotton makes it a comfortable everyday piece and a festive wearing kurta for shadi and baraat alike.",
       "care": "Gentle hand wash or machine wash on delicate cycle. Wash with similar colors and use a mild detergent only. Do not bleach. Iron on low heat and hang to dry in shade.",
       "images": [
-        "./product/pro16-1.jpeg",
-        "./product/pro16-2.jpeg"
+        "/product/pro16-1.jpeg",
+        "/product/pro16-2.jpeg"
       ]
     },
     {
@@ -687,8 +687,8 @@
       ],
       "colorImages": {
         "Teal": [
-          "./product/pro17-1.jpeg",
-          "./product/pro17-2.jpeg"
+          "/product/pro17-1.jpeg",
+          "/product/pro17-2.jpeg"
         ]
       },
       "sizes": [
@@ -718,11 +718,11 @@
         "36": 3500
       },
       "fabric": "Cotton",
-      "description": "A deep teal kurta printed with a fine striped leaf motif and dotted booti detailing in a warm gold tone. The Mandarin collar and fabric-covered buttons keep it traditional, while the breathable cotton makes it comfortable for everyday and festive wear alike.",
+      "description": "A deep teal kurta printed with a fine striped leaf motif and dotted booti detailing in a warm gold tone. The Mandarin collar and fabric-covered buttons keep it traditional, while the breathable cotton makes it a comfortable everyday piece and a festive wearing kurta for shadi and baraat alike.",
       "care": "Gentle hand wash or machine wash on delicate cycle. Wash with similar colors and use a mild detergent only. Do not bleach. Iron on low heat and hang to dry in shade.",
       "images": [
-        "./product/pro17-1.jpeg",
-        "./product/pro17-2.jpeg"
+        "/product/pro17-1.jpeg",
+        "/product/pro17-2.jpeg"
       ]
     },
     {
@@ -739,8 +739,8 @@
       ],
       "colorImages": {
         "Purple": [
-          "./product/pro8-1.jpeg",
-          "./product/pro8-2.jpeg"
+          "/product/pro8-1.jpeg",
+          "/product/pro8-2.jpeg"
         ]
       },
       "sizes": [
@@ -770,11 +770,11 @@
         "36": 3500
       },
       "fabric": "Silk Blend Jacquard",
-      "description": "A rich wine-purple kurta woven with a scattered golden zari booti (motif) pattern for a subtle sheen. Finished with a Mandarin collar and golden buttons, it's a versatile festive pick that pairs well with both shalwar and churidar.",
+      "description": "A rich wine-purple kurta woven with a scattered golden zari booti (motif) pattern for a subtle sheen. Finished with a Mandarin collar and golden buttons, it's a versatile festive wearing kurta for shadi and baraat that pairs well with both shalwar and churidar.",
       "care": "Dry clean recommended to preserve the fabric's sheen. If hand washing, use cold water only and avoid wringing. Do not bleach. Iron on low heat and hang to dry in shade.",
       "images": [
-        "./product/pro8-1.jpeg",
-        "./product/pro8-2.jpeg"
+        "/product/pro8-1.jpeg",
+        "/product/pro8-2.jpeg"
       ]
     },
     {
@@ -791,8 +791,8 @@
       ],
       "colorImages": {
         "Sage Green": [
-          "./product/pro9-1.jpeg",
-          "./product/pro9-2.jpeg"
+          "/product/pro9-1.jpeg",
+          "/product/pro9-2.jpeg"
         ]
       },
       "sizes": [
@@ -822,11 +822,11 @@
         "36": 3500
       },
       "fabric": "Embroidered Chiffon",
-      "description": "A sage green kurta with dense golden paisley and floral embroidery finished with fine sequin work, covering the body edge to edge. The heavily embroidered Mandarin collar and fabric buttons make this the pick for weddings and big-occasion dressing.",
+      "description": "A sage green kurta with dense golden paisley and floral embroidery finished with fine sequin work, covering the body edge to edge. The heavily embroidered Mandarin collar and fabric buttons make this the pick as a festive wearing kurta for shadi, baraat, and big-occasion wedding dressing.",
       "care": "Dry clean only — recommended to protect the dense embroidery and sequin work. Iron on low heat from the reverse side, avoiding direct contact with the embroidery. Store folded flat away from direct sunlight.",
       "images": [
-        "./product/pro9-1.jpeg",
-        "./product/pro9-2.jpeg"
+        "/product/pro9-1.jpeg",
+        "/product/pro9-2.jpeg"
       ]
     },
     {
@@ -843,8 +843,8 @@
       ],
       "colorImages": {
         "Aqua": [
-          "./product/pro10-1.jpeg",
-          "./product/pro10-2.jpeg"
+          "/product/pro10-1.jpeg",
+          "/product/pro10-2.jpeg"
         ]
       },
       "sizes": [
@@ -874,11 +874,11 @@
         "36": 3500
       },
       "fabric": "Embroidered Cotton",
-      "description": "An aqua kurta with tonal floral embroidery running in vertical panels down the front and along the cuffs, finished with a matching embroidered Mandarin collar. A lighter take on festive embroidery that still stands out for Eid and family events.",
+      "description": "An aqua kurta with tonal floral embroidery running in vertical panels down the front and along the cuffs, finished with a matching embroidered Mandarin collar. A lighter take on festive embroidery — a festive wearing kurta that still stands out for shadi, baraat, and family events.",
       "care": "Dry clean recommended to protect the embroidery. If hand washing, use cold water only and avoid wringing. Do not bleach. Iron on low heat, avoiding direct contact with the embroidery, and hang to dry in shade.",
       "images": [
-        "./product/pro10-1.jpeg",
-        "./product/pro10-2.jpeg"
+        "/product/pro10-1.jpeg",
+        "/product/pro10-2.jpeg"
       ]
     },
     {
@@ -895,8 +895,8 @@
       ],
       "colorImages": {
         "Navy": [
-          "./product/pro11-1.jpeg",
-          "./product/pro11-2.jpeg"
+          "/product/pro11-1.jpeg",
+          "/product/pro11-2.jpeg"
         ]
       },
       "sizes": [
@@ -926,11 +926,11 @@
         "36": 3500
       },
       "fabric": "Embroidered Cotton",
-      "description": "A navy blue kurta covered in fine floral thread and sequin embroidery, with a sheer net inset at the collar for a delicate finishing touch. Fabric-covered buttons and a classic straight cut make it a dependable festive staple.",
+      "description": "A navy blue kurta covered in fine floral thread and sequin embroidery, with a sheer net inset at the collar for a delicate finishing touch. Fabric-covered buttons and a classic straight cut make it a dependable festive wearing kurta for shadi and baraat.",
       "care": "Dry clean recommended to protect the embroidery, sequins, and net inset. If hand washing, use cold water only and avoid wringing. Do not bleach. Iron on low heat, avoiding direct contact with the embroidery, and hang to dry in shade.",
       "images": [
-        "./product/pro11-1.jpeg",
-        "./product/pro11-2.jpeg"
+        "/product/pro11-1.jpeg",
+        "/product/pro11-2.jpeg"
       ]
     },
     {
@@ -947,8 +947,8 @@
       ],
       "colorImages": {
         "Royal Blue": [
-          "./product/pro12-1.jpeg",
-          "./product/pro12-2.jpeg"
+          "/product/pro12-1.jpeg",
+          "/product/pro12-2.jpeg"
         ]
       },
       "sizes": [
@@ -978,11 +978,11 @@
         "36": 3500
       },
       "fabric": "Silk Blend Jacquard",
-      "description": "A royal blue kurta with a scattered golden diamond zari booti weave for a subtle festive shine. A simple button placket and Mandarin collar keep the styling clean and easy to dress up or down.",
+      "description": "A royal blue kurta with a scattered golden diamond zari booti weave for a subtle festive shine. A simple button placket and Mandarin collar keep the styling clean — an easy festive wearing kurta to dress up for shadi, baraat, or any celebration.",
       "care": "Dry clean recommended to preserve the fabric's sheen. If hand washing, use cold water only and avoid wringing. Do not bleach. Iron on low heat and hang to dry in shade.",
       "images": [
-        "./product/pro12-1.jpeg",
-        "./product/pro12-2.jpeg"
+        "/product/pro12-1.jpeg",
+        "/product/pro12-2.jpeg"
       ]
     },
     {
@@ -999,8 +999,8 @@
       ],
       "colorImages": {
         "Ivory": [
-          "./product/pro13-1.jpeg",
-          "./product/pro13-2.jpeg"
+          "/product/pro13-1.jpeg",
+          "/product/pro13-2.jpeg"
         ]
       },
       "sizes": [
@@ -1030,11 +1030,11 @@
         "36": 3500
       },
       "fabric": "Embroidered Jacquard",
-      "description": "An ivory sherwani jacket with dense sequin and thread embroidery in a scalloped motif, finished with a Mandarin collar, brooch-style button closures, and a mock pocket square. Structured and formal, it's designed for weddings, Eid, and the biggest occasions on the calendar.",
+      "description": "An ivory sherwani jacket with dense sequin and thread embroidery in a scalloped motif, finished with a Mandarin collar, brooch-style button closures, and a mock pocket square. Structured and formal, this sherwani is tailored for shadi and baraat — the little groom's outfit for the biggest day on the calendar.",
       "care": "Dry clean only. Store on a padded hanger or folded flat away from direct sunlight. Avoid contact with perfume or water, as this may mark the embroidery.",
       "images": [
-        "../product/pro13-1.jpeg",
-        "../product/pro13-2.jpeg"
+        "/product/pro13-1.jpeg",
+        "/product/pro13-2.jpeg"
       ]
     },
     {
@@ -1051,8 +1051,8 @@
       ],
       "colorImages": {
         "Pistachio": [
-          "./product/pro15-1.jpeg",
-          "./product/pro15-2.jpeg"
+          "/product/pro15-1.jpeg",
+          "/product/pro15-2.jpeg"
         ]
       },
       "sizes": [
@@ -1082,11 +1082,11 @@
         "36": 3500
       },
       "fabric": "Self-Textured Cotton",
-      "description": "A soft pistachio-green kurta in a subtle self-striped weave, finished with a Mandarin collar and matching fabric buttons. Minimal and versatile, it's an easy everyday pick that layers well under a waistcoat for slightly dressier occasions.",
+      "description": "A soft pistachio-green kurta in a subtle self-striped weave, finished with a Mandarin collar and matching fabric buttons. Minimal and versatile, it's an easy everyday pick that layers well under a waistcoat as a festive wearing kurta for smaller shadi and baraat occasions too.",
       "care": "Gentle hand wash or machine wash on delicate cycle. Wash with similar colors and use a mild detergent only. Do not bleach. Iron on low heat and hang to dry in shade.",
       "images": [
-        "./product/pro15-1.jpeg",
-        "./product/pro15-2.jpeg"
+        "/product/pro15-1.jpeg",
+        "/product/pro15-2.jpeg"
       ]
     }
   ]

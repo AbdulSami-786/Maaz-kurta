@@ -3107,7 +3107,7 @@ function ProductCard({ product }) {
 
 /* =========================================================  ANNOUNCEMENT BAR  ========================================================= */
 function AnnouncementBar() {
-  const items = ["Summer Sale — Up to 30% Off","Complimentary Shipping on Orders Above Rs. 2,000","New Arrivals Every Friday","JazzCash · Easypaisa · Cash on Delivery"];
+  const items = ["Festive Kurta & Sherwani Collection","Complimentary Shipping on Orders Above Rs. 2,000","New Shadi & Baraat Styles Every Week","JazzCash · Easypaisa · Cash on Delivery"];
   const [idx, setIdx] = useState(0);
   useEffect(()=>{const t=setInterval(()=>setIdx(i=>(i+1)%items.length),3000);return()=>clearInterval(t);},[]);
   return (
@@ -3160,7 +3160,7 @@ function Header() {
 
           {/* Desktop Nav */}
           <nav className="desktop-nav" style={{display:"flex",alignItems:"center",gap:32,flex:1,justifyContent:"center"}}>
-            {[["Kids",()=>navigate("category",{id:"kids"})],["New Arrivals",()=>navigate("search",{query:"new"})],["Sale",()=>navigate("search",{query:"sale"})],["About",()=>navigate("about")]].map(([label,action])=>(
+            {[["Kids",()=>navigate("category",{id:"kids"})],["Festive Kurta",()=>navigate("search",{query:"festive"})],["Sherwani",()=>navigate("search",{query:"sherwani"})],["About",()=>navigate("about")]].map(([label,action])=>(
               <button key={label} onClick={action} className="nav-link" style={{background:"none",border:"none",cursor:"pointer",fontSize:12,fontWeight:500,letterSpacing:"0.12em",textTransform:"uppercase",color:"#111",padding:"4px 0"}}>{label}</button>
             ))}
           </nav>
@@ -3230,7 +3230,7 @@ function Header() {
               <button onClick={()=>setDrawerOpen(false)} style={{background:"none",border:"none",cursor:"pointer",fontSize:18,color:"#6B675C"}}>✕</button>
             </div>
             <nav style={{padding:"16px 0",flex:1}}>
-              {[["Kids","category",{id:"kids"}],["New Arrivals","search",{query:"new"}],["Sale","search",{query:"sale"}],["About Us","about"],["FAQs","faq"]].map(([label,name,params])=>(
+              {[["Kids","category",{id:"kids"}],["Festive Kurta","search",{query:"festive"}],["Sherwani","search",{query:"sherwani"}],["About Us","about"],["FAQs","faq"]].map(([label,name,params])=>(
                 <button key={label} onClick={()=>{navigate(name,params);setDrawerOpen(false);}} style={{display:"block",width:"100%",textAlign:"left",padding:"14px 24px",background:"none",border:"none",cursor:"pointer",fontSize:12,letterSpacing:"0.15em",textTransform:"uppercase",fontWeight:500,borderBottom:"1px solid #F2EEE6",color:"#111",transition:"background 0.2s"}}>
                   {label}
                 </button>
@@ -3325,13 +3325,13 @@ function CategoryGrid() {
             </div>
           </div>
         </div>
-        {/* Top right — New Arrivals */}
-        <div className="category-card cat-tile-wide" style={{gridColumn:"2/4"}} onClick={()=>navigate("search",{query:"new"})}>
+        {/* Top right — Sherwani */}
+        <div className="category-card cat-tile-wide" style={{gridColumn:"2/4"}} onClick={()=>navigate("search",{query:"sherwani"})}>
           <div className="cat-tile-inner-sm" style={{position:"relative",height:"100%",minHeight:240}}>
-            <img className="cat-tile-img-sm" src="/product/pro11-1.jpeg" alt="New Arrivals" style={{width:"100%",height:"100%",objectFit:"cover",minHeight:240,display:"block"}} />
+            <img className="cat-tile-img-sm" src="/product/pro13-1.jpeg" alt="Sherwani" style={{width:"100%",height:"100%",objectFit:"cover",minHeight:240,display:"block"}} />
             <div style={{position:"absolute",inset:0,background:"linear-gradient(to top,rgba(0,0,0,0.6) 0%,transparent 60%)"}} />
             <div style={{position:"absolute",bottom:24,left:24}}>
-              <h3 className="font-serif" style={{fontSize:26,fontWeight:400,color:"#fff",marginBottom:4}}>New Arrivals</h3>
+              <h3 className="font-serif" style={{fontSize:26,fontWeight:400,color:"#fff",marginBottom:4}}>Sherwani</h3>
               <span style={{fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",color:"#C6A15B",fontWeight:500}}>View All →</span>
             </div>
           </div>
@@ -3347,12 +3347,12 @@ function CategoryGrid() {
             </div>
           </div>
         </div>
-        {/* Bottom right — Sale */}
-        <div className="category-card" onClick={()=>navigate("search",{query:"sale"})}>
+        {/* Bottom right — Festive Kurta */}
+        <div className="category-card" onClick={()=>navigate("search",{query:"festive"})}>
           <div className="cat-tile-inner-sm" style={{position:"relative",height:"100%",minHeight:240,background:"#1A3C34",display:"flex",alignItems:"center",justifyContent:"center",flexDirection:"column",gap:12,padding:24}}>
-            <p style={{fontSize:11,letterSpacing:"0.3em",textTransform:"uppercase",color:"#A9885A"}}>Limited Time</p>
-            <h3 className="font-serif" style={{fontSize:34,fontWeight:400,color:"#F6F3ED",textAlign:"center",lineHeight:1.25}}>The Seasonal Sale<br/><em style={{color:"#C6A15B"}}>Up to 30% Off</em></h3>
-            <button className="btn-primary" style={{marginTop:10,background:"transparent",borderColor:"#C6A15B",color:"#C6A15B"}}>Shop Sale →</button>
+            <p style={{fontSize:11,letterSpacing:"0.3em",textTransform:"uppercase",color:"#A9885A"}}>Shadi & Baraat</p>
+            <h3 className="font-serif" style={{fontSize:34,fontWeight:400,color:"#F6F3ED",textAlign:"center",lineHeight:1.25}}>Festive Kurta<br/><em style={{color:"#C6A15B"}}>Collection</em></h3>
+            <button className="btn-primary" style={{marginTop:10,background:"transparent",borderColor:"#C6A15B",color:"#C6A15B"}}>Shop Festive Kurta →</button>
           </div>
         </div>
       </div>
@@ -3371,21 +3371,21 @@ function CategoryGrid() {
 }
 
 /* =========================================================  NEW ARRIVALS  ========================================================= */
-function NewArrivalsSection() {
+function FestiveKurtaSection() {
   const { navigate } = useApp();
-  const newArrivals = PRODUCTS.filter(p=>p.isNew).slice(0,8);
+  const festiveKurtas = PRODUCTS.filter(p=>!p.name.toLowerCase().includes("sherwani")).slice(0,8);
   return (
     <section className="new-arrivals-section" style={{padding:"0 0 80px"}}>
       <div style={{maxWidth:1320,margin:"0 auto",padding:"0 24px"}}>
         <div style={{display:"flex",alignItems:"flex-end",justifyContent:"space-between",marginBottom:40,flexWrap:"wrap",gap:16}}>
           <div>
-            <p style={{fontSize:11,letterSpacing:"0.3em",textTransform:"uppercase",color:"#A9885A",marginBottom:6}}>Just In</p>
-            <h2 className="font-serif" style={{fontSize:38,fontWeight:400,color:"#1D1C18"}}>New Arrivals</h2>
+            <p style={{fontSize:11,letterSpacing:"0.3em",textTransform:"uppercase",color:"#A9885A",marginBottom:6}}>Shadi & Baraat</p>
+            <h2 className="font-serif" style={{fontSize:38,fontWeight:400,color:"#1D1C18"}}>Festive Kurta</h2>
           </div>
-          <button className="btn-outline" onClick={()=>navigate("search",{query:"new"})}>View All →</button>
+          <button className="btn-outline" onClick={()=>navigate("search",{query:"festive"})}>View All →</button>
         </div>
         <div className="new-arrivals-grid" style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:24}}>
-          {newArrivals.map(p=><ProductCard key={p.id} product={p} />)}
+          {festiveKurtas.map(p=><ProductCard key={p.id} product={p} />)}
         </div>
       </div>
       <style>{`
@@ -4201,7 +4201,7 @@ function Footer() {
             ))}
           </div>
         </div>
-        {[["Shop",[["Kids' Kurtas","category",{id:"kids"}],["New Arrivals","search",{query:"new"}],["Sale","search",{query:"sale"}]]],["Help",[["About Us","about"],["FAQs","faq"],["My Orders","account"]]],["Payment",[["JazzCash"],["Easypaisa"],["Visa/MC"],["COD"]]]].map(([title,items])=>(
+        {[["Shop",[["Kids' Kurtas","category",{id:"kids"}],["Festive Kurta","search",{query:"festive"}],["Sherwani","search",{query:"sherwani"}]]],["Help",[["About Us","about"],["FAQs","faq"],["My Orders","account"]]],["Payment",[["JazzCash"],["Easypaisa"],["Visa/MC"],["COD"]]]].map(([title,items])=>(
           <div key={title}>
             <h3 style={{fontSize:10,letterSpacing:"0.28em",textTransform:"uppercase",color:"#A9885A",fontWeight:600,marginBottom:20}}>{title}</h3>
             <ul style={{listStyle:"none",display:"flex",flexDirection:"column",gap:10}}>
@@ -4245,7 +4245,7 @@ function HomePage() {
       <HeroSection />
       <StatsStrip />
       <CategoryGrid />
-      <NewArrivalsSection />
+      <FestiveKurtaSection />
       <PromoBannersSection />
       <ShopThisLookSection />
       <StoreBanner />
@@ -4287,7 +4287,7 @@ function ListingPage({ mode }) {
   const baseList = useMemo(()=>{
     let list=PRODUCTS;
     if(categoryId) list=list.filter(p=>p.category===categoryId);
-    if(query){ const q=query.toLowerCase(); if(q==="sale") list=list.filter(p=>p.salePrice); else if(q==="new") list=list.filter(p=>p.isNew); else list=list.filter(p=>p.name.toLowerCase().includes(q)||p.fabric?.toLowerCase().includes(q)||p.colors?.some(c=>c.toLowerCase().includes(q))); }
+    if(query){ const q=query.toLowerCase(); if(q==="festive") list=list.filter(p=>!p.name.toLowerCase().includes("sherwani")); else list=list.filter(p=>p.name.toLowerCase().includes(q)||p.fabric?.toLowerCase().includes(q)||p.colors?.some(c=>c.toLowerCase().includes(q))); }
     return list;
   },[categoryId,query]);
 
@@ -4306,14 +4306,15 @@ function ListingPage({ mode }) {
 
   const toggleFilter=(key,value)=>setFilters(prev=>{ const s=new Set(prev[key]); s.has(value)?s.delete(value):s.add(value); return{...prev,[key]:Array.from(s)}; });
   const clearFilters=()=>setFilters({colors:[],sizes:[],maxPrice:3000});
-  const title=mode==="category"?CATEGORIES.find(c=>c.id===categoryId)?.label||"Products":`Search: "${query}"`;
+  const SEARCH_LABELS = { sherwani:"Sherwani", festive:"Festive Kurta" };
+  const title=mode==="category"?CATEGORIES.find(c=>c.id===categoryId)?.label||"Products":SEARCH_LABELS[query.toLowerCase()]||`Search: "${query}"`;
 
   return (
     <div style={{maxWidth:1320,margin:"0 auto",padding:"40px 24px"}}>
-      <Breadcrumbs items={mode==="category"?[{label:"Home",page:"home"},{label:title}]:[{label:"Home",page:"home"},{label:"Search"}]} />
+      <Breadcrumbs items={[{label:"Home",page:"home"},{label:title}]} />
       <div style={{display:"flex",alignItems:"flex-end",justifyContent:"space-between",marginBottom:8,flexWrap:"wrap",gap:8}}>
         <h1 className="font-serif" style={{fontSize:36,fontWeight:400,color:"#111"}}>{title}</h1>
-        {mode==="search" && <button onClick={()=>navigate("home")} style={{background:"none",border:"none",cursor:"pointer",fontSize:12,color:"#1A3C34",letterSpacing:"0.08em",textDecoration:"underline"}}>Clear search</button>}
+        {mode==="search" && !SEARCH_LABELS[query.toLowerCase()] && <button onClick={()=>navigate("home")} style={{background:"none",border:"none",cursor:"pointer",fontSize:12,color:"#1A3C34",letterSpacing:"0.08em",textDecoration:"underline"}}>Clear search</button>}
       </div>
       <p style={{fontSize:12,color:"#96917E",letterSpacing:"0.08em",marginBottom:24,textTransform:"uppercase"}}>{filtered.length} product{filtered.length===1?"":"s"}</p>
 
@@ -5629,17 +5630,16 @@ function PageSEO() {
     }
     case "search": {
       const q = (page.query || "").toLowerCase();
-      const known = { sherwani:"Kids' Sherwani", new:"New Arrivals", sale:"Sale" };
+      const known = { sherwani:"Sherwani", festive:"Festive Kurta" };
       const label = known[q] || (page.query ? `Search: "${page.query}"` : "Search");
       title = `${label} — ${SITE_NAME}`;
       description =
-        q === "sherwani" ? "Shop kids' sherwani for weddings and Eid at MD Fashion — ceremonial ethnic wear for boys, sizes 16–36. Free shipping over Rs. 2,000."
-        : q === "new" ? "New kids' kurta and sherwani arrivals at MD Fashion — fresh embroidered and printed designs added every week."
-        : q === "sale" ? "Kids' kurta and sherwani sale at MD Fashion — save on ethnic wear for boys and girls, Cash on Delivery available."
+        q === "sherwani" ? "Shop kids' sherwani for shadi and baraat at MD Fashion — ceremonial ethnic wear for boys, sizes 16–36. Free shipping over Rs. 2,000."
+        : q === "festive" ? "Festive wearing kurtas for kids at MD Fashion — embroidered, sequin, and zari booti kurtas made for shadi, baraat, and every celebration."
         : `Search results for "${page.query || ""}" at MD Fashion.`;
       noindex = !known[q];
       if (known[q]) {
-        const items = (q === "sale" ? PRODUCTS.filter(p => p.salePrice) : q === "new" ? PRODUCTS.filter(p => p.isNew) : PRODUCTS.filter(p => p.name.toLowerCase().includes(q))).slice(0, 24);
+        const items = (q === "festive" ? PRODUCTS.filter(p => !p.name.toLowerCase().includes("sherwani")) : PRODUCTS.filter(p => p.name.toLowerCase().includes(q))).slice(0, 24);
         jsonLd = {
           "@context": "https://schema.org",
           "@graph": [

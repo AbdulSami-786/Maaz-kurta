@@ -10,7 +10,7 @@ export const slugify = (str = "") =>
 const productSlug = (product) => `${slugify(product.name)}-${product.id}`;
 
 /* Human-readable, keyword-rich paths for the pages that matter for search
-   (kids' kurta, sherwani, new arrivals, sale) instead of leaving every page
+   (kids' kurta, sherwani, festive kurta) instead of leaving every page
    on the same "/" URL, which is invisible to search engines. */
 export function routeFor(page) {
   const { name, ...params } = page || {};
@@ -21,8 +21,7 @@ export function routeFor(page) {
     case "search": {
       const q = (params.query || "").toLowerCase();
       if (q === "sherwani") return "/sherwani";
-      if (q === "new") return "/new-arrivals";
-      if (q === "sale") return "/sale";
+      if (q === "festive") return "/festive-kurta";
       return `/search${params.query ? `?q=${encodeURIComponent(params.query)}` : ""}`;
     }
     case "product": {
@@ -48,8 +47,7 @@ export function parseRoute(pathname, search) {
   if (path === "/") return { name: "home" };
   if (path === "/kids-kurta") return { name: "category", id: "kids" };
   if (path === "/sherwani") return { name: "search", query: "sherwani" };
-  if (path === "/new-arrivals") return { name: "search", query: "new" };
-  if (path === "/sale") return { name: "search", query: "sale" };
+  if (path === "/festive-kurta") return { name: "search", query: "festive" };
   if (path === "/search") return { name: "search", query: params.get("q") || "" };
   if (path === "/cart") return { name: "cart" };
   if (path === "/checkout") return { name: "checkout" };
