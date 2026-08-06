@@ -4482,6 +4482,17 @@ function ProductPage() {
           </div>
         </section>
       )}
+
+      {showSizeGuide && (
+        <div style={{position:"fixed",inset:0,zIndex:100,display:"flex",alignItems:"center",justifyContent:"center",padding:16,animation:"fadeIn 0.2s ease"}}>
+          <div style={{position:"absolute",inset:0,background:"rgba(0,0,0,0.6)",backdropFilter:"blur(4px)"}} onClick={()=>setShowSizeGuide(false)} />
+          <div style={{position:"relative",background:"#fff",maxWidth:520,width:"100%",maxHeight:"90vh",overflowY:"auto",animation:"modalIn 0.25s ease"}}>
+            <button onClick={()=>setShowSizeGuide(false)} style={{position:"absolute",top:12,right:12,width:32,height:32,border:"1px solid #E7E0D2",background:"#fff",cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",fontSize:16,color:"#6B675C",zIndex:1}}>✕</button>
+            <img src="/sizechart.png" alt="MD Fashion kids' size chart — sizes 16 to 36 by age" onError={onImgError} style={{width:"100%",height:"auto",display:"block"}} />
+          </div>
+        </div>
+      )}
+
       <style>{`@media(max-width:768px){div[style*="gridTemplateColumns: 1fr 1fr"]{grid-template-columns:1fr!important;gap:32px!important;} div[style*="repeat(4,1fr)"]{grid-template-columns:repeat(2,1fr)!important;}}`}</style>
     </div>
   );
