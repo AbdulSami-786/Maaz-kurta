@@ -4193,11 +4193,19 @@ function Footer() {
             <span className="font-serif" style={{fontSize:20,fontWeight:500,color:"#F6F3ED"}}>MD Fashion</span>
           </div>
           <p style={{fontSize:13,lineHeight:1.9,color:"#8F8B7E",fontWeight:300,maxWidth:260}}>Ethnic wear for everyday and every occasion. Designed and shipped across Pakistan.</p>
+          <p style={{fontSize:13,lineHeight:1.9,color:"#8F8B7E",fontWeight:300,marginTop:10}}>
+            <a href="https://wa.me/923253022813" target="_blank" rel="noopener noreferrer" style={{color:"#8F8B7E",textDecoration:"none"}}>+92 325 3022813</a>
+            <br/>
+            <a href="mailto:website.mdfashion@gmail.com" style={{color:"#8F8B7E",textDecoration:"none"}}>website.mdfashion@gmail.com</a>
+          </p>
           <div style={{display:"flex",gap:12,marginTop:24}}>
-            {["FB","IG","TW","YT"].map(s=>(
-              <div key={s} style={{width:34,height:34,border:"1px solid #33312A",display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer",transition:"all 0.2s",fontSize:10,color:"#8F8B7E",letterSpacing:"0.05em"}}
+            {[
+              {label:"WA", title:"WhatsApp", href:"https://wa.me/923253022813"},
+              {label:"IG", title:"Instagram", href:"https://instagram.com/md_fashionpk"},
+            ].map(s=>(
+              <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" title={s.title} style={{width:34,height:34,border:"1px solid #33312A",display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer",transition:"all 0.2s",fontSize:10,color:"#8F8B7E",letterSpacing:"0.05em",textDecoration:"none"}}
                 onMouseEnter={e=>{e.currentTarget.style.borderColor="#A9885A";e.currentTarget.style.color="#C6A15B";}}
-                onMouseLeave={e=>{e.currentTarget.style.borderColor="#33312A";e.currentTarget.style.color="#8F8B7E";}}>{s}</div>
+                onMouseLeave={e=>{e.currentTarget.style.borderColor="#33312A";e.currentTarget.style.color="#8F8B7E";}}>{s.label}</a>
             ))}
           </div>
         </div>
