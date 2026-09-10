@@ -1,4 +1,4 @@
-const API_URL = "https://script.google.com/macros/s/AKfycbwdmBD412KdzkV_oexuWxifu5GaSyglBNNF3HLdoNwKxVUEJkSQ4AF20wMm7RfboQYbmg/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbwccjkJYW_D5ZBB3q4QoE4J5rdHPzwRQW_iTGekEjqWbwpH31UH9infgoNiSTKFg3XJNg/exec";
 const TOKEN_KEY = "kurta_token";
 
 export const getToken = () => localStorage.getItem(TOKEN_KEY);
