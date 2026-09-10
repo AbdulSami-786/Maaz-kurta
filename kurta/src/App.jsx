@@ -2666,6 +2666,14 @@ const getMinSizePrice = (product) => {
   if (product.sizePrices) return Math.min(...Object.values(product.sizePrices));
   return product.salePrice ?? product.price;
 };
+const getMaxSizePrice = (product) => {
+  if (product.sizePrices) return Math.max(...Object.values(product.sizePrices));
+  return product.salePrice ?? product.price;
+};
+/* Price filter ceiling — derived from the highest-priced product so new,
+   pricier listings (e.g. multi-piece sets) aren't silently filtered out
+   by a stale hardcoded cap. */
+const PRICE_CEILING = Math.ceil(Math.max(...PRODUCTS.map(getMaxSizePrice)) / 500) * 500;
 
 /* Shared form styles used across auth / profile / address forms */
 const labelStyle = { fontSize:10, letterSpacing:"0.15em", textTransform:"uppercase", fontWeight:600, color:"#96917E", display:"block", marginBottom:6 };
@@ -3364,6 +3372,57 @@ function CategoryGrid() {
           .cat-tile-wide{grid-column:auto!important;}
           .cat-tile-inner-lg,.cat-tile-img-lg{min-height:320px!important;}
           .cat-tile-inner-sm,.cat-tile-img-sm{min-height:200px!important;}
+        }
+      `}</style>
+    </section>
+  );
+}
+
+/* =========================================================  CATEGORY TABS — browse by category, driven by Data.json  ========================================================= */
+function CategoryTabsSection() {
+  const { navigate } = useApp();
+  const [activeCat, setActiveCat] = useState(CATEGORIES[0]?.id);
+  const activeCategory = CATEGORIES.find(c => c.id === activeCat) || CATEGORIES[0];
+  const items = PRODUCTS.filter(p => p.category === activeCat).slice(0, 8);
+
+  if (CATEGORIES.length < 2) return null;
+
+  return (
+    <section className="cat-tabs-section" style={{maxWidth:1320,margin:"0 auto",padding:"0 24px 80px"}}>
+      <div style={{textAlign:"center",marginBottom:32}}>
+        <p style={{fontSize:11,letterSpacing:"0.3em",textTransform:"uppercase",color:"#A9885A",marginBottom:8}}>Browse</p>
+        <h2 className="font-serif" style={{fontSize:38,fontWeight:400,color:"#1D1C18"}}>Shop by Category</h2>
+      </div>
+      <div className="cat-tabs-row" style={{display:"flex",justifyContent:"center",flexWrap:"wrap",gap:10,marginBottom:40}}>
+        {CATEGORIES.map(c => (
+          <button key={c.id} onClick={()=>setActiveCat(c.id)} className="cat-tab-btn" style={{
+            padding:"12px 26px",
+            border:`1px solid ${activeCat===c.id?"#1A3C34":"#D9D2C2"}`,
+            background:activeCat===c.id?"#1A3C34":"transparent",
+            color:activeCat===c.id?"#F6F3ED":"#1D1C18",
+            fontSize:12,letterSpacing:"0.12em",textTransform:"uppercase",fontWeight:500,
+            cursor:"pointer",transition:"all 0.25s ease",
+          }}>
+            {c.label}
+          </button>
+        ))}
+      </div>
+      {items.length>0 ? (
+        <>
+          <div className="new-arrivals-grid" style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:24}}>
+            {items.map(p=><ProductCard key={p.id} product={p} />)}
+          </div>
+          <div style={{textAlign:"center",marginTop:40}}>
+            <button className="btn-outline" onClick={()=>navigate("category",{id:activeCat})}>View All {activeCategory?.label} →</button>
+          </div>
+        </>
+      ) : (
+        <p style={{textAlign:"center",color:"#6B675C",fontSize:14}}>No products yet in this category.</p>
+      )}
+      <style>{`
+        @media(max-width:640px){
+          .cat-tabs-section{padding:0 20px 48px!important;}
+          .cat-tab-btn{padding:10px 18px!important;font-size:11px!important;}
         }
       `}</style>
     </section>
@@ -4253,6 +4312,7 @@ function HomePage() {
       <HeroSection />
       <StatsStrip />
       <CategoryGrid />
+      <CategoryTabsSection />
       <FestiveKurtaSection />
       <PromoBannersSection />
       <ShopThisLookSection />
@@ -4269,7 +4329,7 @@ function HomePage() {
 
 /* =========================================================  LISTING PAGE  ========================================================= */
 function ActiveFilterChips({ filters, onRemoveColor, onRemoveSize, onClearPrice }) {
-  const chips=[...filters.colors.map(c=>({label:`Color: ${c}`,onRemove:()=>onRemoveColor(c)})),...filters.sizes.map(s=>({label:`Size: ${s}`,onRemove:()=>onRemoveSize(s)})),...(filters.maxPrice<3000?[{label:`Max: ${formatPKR(filters.maxPrice)}`,onRemove:onClearPrice}]:[])];
+  const chips=[...filters.colors.map(c=>({label:`Color: ${c}`,onRemove:()=>onRemoveColor(c)})),...filters.sizes.map(s=>({label:`Size: ${s}`,onRemove:()=>onRemoveSize(s)})),...(filters.maxPrice<PRICE_CEILING?[{label:`Max: ${formatPKR(filters.maxPrice)}`,onRemove:onClearPrice}]:[])];
   if (!chips.length) return null;
   return (
     <div style={{display:"flex",flexWrap:"wrap",gap:8,marginBottom:20}}>
@@ -4285,7 +4345,7 @@ function ActiveFilterChips({ filters, onRemoveColor, onRemoveSize, onClearPrice 
 
 function ListingPage({ mode }) {
   const { page, navigate } = useApp();
-  const [filters, setFilters] = useState({ colors:[], sizes:[], maxPrice:3000 });
+  const [filters, setFilters] = useState({ colors:[], sizes:[], maxPrice:PRICE_CEILING });
   const [sort, setSort] = useState("popular");
   const [filtersOpen, setFiltersOpen] = useState(false);
 
@@ -4313,7 +4373,7 @@ function ListingPage({ mode }) {
   },[baseList,filters,sort]);
 
   const toggleFilter=(key,value)=>setFilters(prev=>{ const s=new Set(prev[key]); s.has(value)?s.delete(value):s.add(value); return{...prev,[key]:Array.from(s)}; });
-  const clearFilters=()=>setFilters({colors:[],sizes:[],maxPrice:3000});
+  const clearFilters=()=>setFilters({colors:[],sizes:[],maxPrice:PRICE_CEILING});
   const SEARCH_LABELS = { sherwani:"Sherwani", festive:"Festive Kurta" };
   const title=mode==="category"?CATEGORIES.find(c=>c.id===categoryId)?.label||"Products":SEARCH_LABELS[query.toLowerCase()]||`Search: "${query}"`;
 
@@ -4331,7 +4391,7 @@ function ListingPage({ mode }) {
       </button>
       <style>{`.listing-filter-toggle{display:block!important} @media(min-width:768px){.listing-filter-toggle{display:none!important}}`}</style>
 
-      <ActiveFilterChips filters={filters} onRemoveColor={c=>toggleFilter("colors",c)} onRemoveSize={s=>toggleFilter("sizes",s)} onClearPrice={()=>setFilters(f=>({...f,maxPrice:3000}))} />
+      <ActiveFilterChips filters={filters} onRemoveColor={c=>toggleFilter("colors",c)} onRemoveSize={s=>toggleFilter("sizes",s)} onClearPrice={()=>setFilters(f=>({...f,maxPrice:PRICE_CEILING}))} />
 
       <div style={{display:"flex",gap:40}}>
         {/* Sidebar */}
@@ -4339,7 +4399,7 @@ function ListingPage({ mode }) {
           <div style={{position:"sticky",top:80}}>
             <div style={{marginBottom:32}}>
               <h3 style={{fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontWeight:600,marginBottom:16,paddingBottom:8,borderBottom:"1px solid #E7E0D2"}}>Price (max)</h3>
-              <input type="range" min={1000} max={3000} step={100} value={filters.maxPrice} onChange={e=>setFilters(f=>({...f,maxPrice:Number(e.target.value)}))} style={{width:"100%"}} />
+              <input type="range" min={1000} max={PRICE_CEILING} step={100} value={filters.maxPrice} onChange={e=>setFilters(f=>({...f,maxPrice:Number(e.target.value)}))} style={{width:"100%"}} />
               <p style={{fontSize:12,color:"#6B675C",marginTop:6}}>Up to {formatPKR(filters.maxPrice)}</p>
             </div>
             {allColors.length>0 && (
@@ -4366,7 +4426,7 @@ function ListingPage({ mode }) {
                 </div>
               </div>
             )}
-            {(filters.colors.length>0||filters.sizes.length>0||filters.maxPrice<3000) && (
+            {(filters.colors.length>0||filters.sizes.length>0||filters.maxPrice<PRICE_CEILING) && (
               <button onClick={clearFilters} style={{background:"none",border:"none",cursor:"pointer",fontSize:11,color:"#1A3C34",letterSpacing:"0.08em",textDecoration:"underline"}}>Clear all filters</button>
             )}
           </div>

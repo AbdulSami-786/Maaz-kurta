@@ -29,10 +29,19 @@
     {
       "id": "kids",
       "label": "Kids' Kurtas"
+    },
+    {
+      "id": "waistcoat-set",
+      "label": "Waistcoat Sets"
+    },
+    {
+      "id": "sherwani",
+      "label": "Sherwani"
     }
   ],
   "colorSwatches": {
     "Ivory": "#FFFFF0",
+    "Blush Pink": "#EFB8C8",
     "Teal": "#1A3C34",
     "Maroon": "#7B1E1E",
     "Navy": "#1B2A4A",
@@ -988,8 +997,8 @@
     {
       "id": "kk-014",
       "name": "Ivory Sequin Embroidered Sherwani",
-      "category": "kids",
-      "price": 2500,
+      "category": "sherwani",
+      "price": 3500,
       "salePrice": null,
       "isNew": true,
       "rating": 5,
@@ -1017,17 +1026,17 @@
         "36"
       ],
       "sizePrices": {
-        "16": 2500,
-        "18": 2500,
-        "20": 2500,
-        "22": 2500,
-        "24": 2500,
-        "26": 3500,
-        "28": 3500,
-        "30": 3500,
-        "32": 3500,
-        "34": 3500,
-        "36": 3500
+        "16": 3500,
+        "18": 3500,
+        "20": 3500,
+        "22": 3500,
+        "24": 3500,
+        "26": 4500,
+        "28": 4500,
+        "30": 4500,
+        "32": 4500,
+        "34": 4500,
+        "36": 4500
       },
       "fabric": "Embroidered Jacquard",
       "description": "An ivory sherwani jacket with dense sequin and thread embroidery in a scalloped motif, finished with a Mandarin collar, brooch-style button closures, and a mock pocket square. Structured and formal, this sherwani is tailored for shadi and baraat — the little groom's outfit for the biggest day on the calendar.",
@@ -1087,6 +1096,268 @@
       "images": [
         "/product/pro15-1.jpeg",
         "/product/pro15-2.jpeg"
+      ]
+    },
+    {
+      "id": "kk-023",
+      "name": "Maroon Leaf Vine Embroidered Kurta",
+      "category": "kids",
+      "price": 3500,
+      "salePrice": null,
+      "isNew": true,
+      "rating": 4.6,
+      "reviews": 3,
+      "colors": [
+        "Maroon"
+      ],
+      "colorImages": {
+        "Maroon": [
+          "/product/pro18-1.jpeg",
+          "/product/pro18-2.jpeg"
+        ]
+      },
+      "sizes": [
+        "16",
+        "18",
+        "20",
+        "22",
+        "24",
+        "26",
+        "28",
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "sizePrices": {
+        "16": 3500,
+        "18": 3500,
+        "20": 3500,
+        "22": 3500,
+        "24": 3500,
+        "26": 4500,
+        "28": 4500,
+        "30": 4500,
+        "32": 4500,
+        "34": 4500,
+        "36": 4500
+      },
+      "fabric": "Schiffli Cutwork Cotton",
+      "description": "A deep maroon kurta covered edge to edge in a fine white leaf-and-vine schiffli print, finished with a Mandarin collar and a neat button placket. The dense all-over pattern gives it a lace-like, cutwork finish, making this a striking festive wearing kurta for shadi, baraat, and Eid gatherings.",
+      "care": "Gentle hand wash or machine wash on delicate cycle. Wash with similar colors and use a mild detergent only. Do not bleach. Iron on low heat and hang to dry in shade.",
+      "images": [
+        "/product/pro18-1.jpeg",
+        "/product/pro18-2.jpeg"
+      ]
+    },
+    {
+      "id": "kk-019",
+      "name": "Teal Leaf Vine Embroidered Kurta",
+      "category": "kids",
+      "price": 3500,
+      "salePrice": null,
+      "isNew": true,
+      "rating": 4.5,
+      "reviews": 2,
+      "colors": [
+        "Teal"
+      ],
+      "colorImages": {
+        "Teal": [
+          "/product/pro19-1.jpeg",
+          "/product/pro19-2.jpeg"
+        ]
+      },
+      "sizes": [
+        "16",
+        "18",
+        "20",
+        "22",
+        "24",
+        "26",
+        "28",
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "sizePrices": {
+        "16": 3500,
+        "18": 3500,
+        "20": 3500,
+        "22": 3500,
+        "24": 3500,
+        "26": 4500,
+        "28": 4500,
+        "30": 4500,
+        "32": 4500,
+        "34": 4500,
+        "36": 4500
+      },
+      "fabric": "Schiffli Cutwork Cotton",
+      "description": "A rich teal kurta patterned with the same fine white leaf-and-vine schiffli print, finished with a Mandarin collar and button-down placket. Lightweight and breathable, it works equally well as an everyday kurta and as a festive wearing kurta for shadi, baraat, and Eid.",
+      "care": "Gentle hand wash or machine wash on delicate cycle. Wash with similar colors and use a mild detergent only. Do not bleach. Iron on low heat and hang to dry in shade.",
+      "images": [
+        "/product/pro19-1.jpeg",
+        "/product/pro19-2.jpeg"
+      ]
+    },
+    {
+      "id": "kk-020",
+      "name": "Powder Blue Self-Textured Kurta",
+      "category": "kids",
+      "price": 3500,
+      "salePrice": null,
+      "isNew": true,
+      "rating": 4.4,
+      "reviews": 4,
+      "colors": [
+        "Powder Blue"
+      ],
+      "colorImages": {
+        "Powder Blue": [
+          "/product/pro20-1.jpeg",
+          "/product/pro20-2.jpeg"
+        ]
+      },
+      "sizes": [
+        "16",
+        "18",
+        "20",
+        "22",
+        "24",
+        "26",
+        "28",
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "sizePrices": {
+        "16": 3500,
+        "18": 3500,
+        "20": 3500,
+        "22": 3500,
+        "24": 3500,
+        "26": 4500,
+        "28": 4500,
+        "30": 4500,
+        "32": 4500,
+        "34": 4500,
+        "36": 4500
+      },
+      "fabric": "Self-Textured Cotton",
+      "description": "A soft powder blue kurta in a subtle self-textured weave with a delicate tone-on-tone dobby pattern throughout. The Mandarin collar and matching fabric buttons keep the finish clean and minimal — an easy festive wearing kurta for shadi, baraat, and everyday occasions alike.",
+      "care": "Gentle hand wash or machine wash on delicate cycle. Wash with similar colors and use a mild detergent only. Do not bleach. Iron on low heat and hang to dry in shade.",
+      "images": [
+        "/product/pro20-1.jpeg",
+        "/product/pro20-2.jpeg"
+      ]
+    },
+    {
+      "id": "kk-021",
+      "name": "Mustard Bead-Embroidered Waistcoat Set",
+      "category": "waistcoat-set",
+      "price": 4500,
+      "salePrice": null,
+      "isNew": true,
+      "rating": 4.9,
+      "reviews": 1,
+      "colors": [
+        "Mustard"
+      ],
+      "colorImages": {
+        "Mustard": [
+          "/product/pro21-1.jpeg",
+          "/product/pro21-2.jpeg",
+          "/product/pro21-3.jpeg"
+        ]
+      },
+      "sizes": [
+        "16",
+        "18",
+        "20",
+        "22",
+        "24",
+        "26",
+        "28",
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "sizePrices": {
+        "16": 4500,
+        "18": 4500,
+        "20": 4500,
+        "22": 4500,
+        "24": 4500,
+        "26": 5500,
+        "28": 5500,
+        "30": 5500,
+        "32": 5500,
+        "34": 5500,
+        "36": 5500
+      },
+      "fabric": "Cotton Silk with Bead Embroidery",
+      "description": "A festive two-piece set in warm mustard, pairing a sleeveless Mandarin-collar waistcoat with colorful bead-embroidered motifs — elephants, tassels, and an umbrella — over a matching full-sleeve kurta. Finished with statement metal buttons, this playful folk-inspired set is built for shadi, baraat, and Eid celebrations.",
+      "care": "Dry clean only to protect the bead embroidery. Store on a padded hanger or folded flat away from direct sunlight. Avoid contact with perfume or water, as this may mark the embroidery.",
+      "images": [
+        "/product/pro21-1.jpeg",
+        "/product/pro21-2.jpeg",
+        "/product/pro21-3.jpeg"
+      ]
+    },
+    {
+      "id": "kk-022",
+      "name": "Blush Pink Embroidered Sherwani Jacket",
+      "category": "sherwani",
+      "price": 3500,
+      "salePrice": null,
+      "isNew": true,
+      "rating": 4.8,
+      "reviews": 2,
+      "colors": [
+        "Blush Pink"
+      ],
+      "colorImages": {
+        "Blush Pink": [
+          "/product/pro22-1.jpeg",
+          "/product/pro22-2.jpeg"
+        ]
+      },
+      "sizes": [
+        "16",
+        "18",
+        "20",
+        "22",
+        "24",
+        "26",
+        "28",
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "sizePrices": {
+        "16": 3500,
+        "18": 3500,
+        "20": 3500,
+        "22": 3500,
+        "24": 3500,
+        "26": 4500,
+        "28": 4500,
+        "30": 4500,
+        "32": 4500,
+        "34": 4500,
+        "36": 4500
+      },
+      "fabric": "Tone-on-Tone Embroidered Fabric",
+      "description": "A blush pink sherwani jacket covered edge to edge in dense tone-on-tone floral panel embroidery, finished with a Mandarin collar, a single statement button closure, and a mock pocket square. Structured and richly detailed, this sherwani is tailored for shadi and baraat — a standout look for the little groom's big day.",
+      "care": "Dry clean only. Store on a padded hanger or folded flat away from direct sunlight. Avoid contact with perfume or water, as this may mark the embroidery.",
+      "images": [
+        "/product/pro22-1.jpeg",
+        "/product/pro22-2.jpeg"
       ]
     }
   ]
